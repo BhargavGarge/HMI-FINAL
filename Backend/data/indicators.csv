@@ -1,0 +1,5 @@
+id,name,unit,category,tags
+1,Welfare Loss,%,economic,"['sanctions', 'russia']"
+2,Employment Share,%,gender,"['employment', 'gender']"
+3,Coverage / Emissions,%,energy,"['taxonomy', 'emissions']"
+4,Board Representation Share,%,gender,"['board', 'representation', 'gender']"

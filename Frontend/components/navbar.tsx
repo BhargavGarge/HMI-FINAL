@@ -41,17 +41,17 @@ export default function Navbar() {
               Explore Data
             </Link>
             <Link
-              href="/audio-reports"
+              href="/story-analyser"
               className="transition-colors hover:text-foreground/80"
             >
-              Audio Reports
+              Stories Analyser
             </Link>
-            {/* <Link
-              href="#"
+            <Link
+              href="/story"
               className="transition-colors hover:text-foreground/80"
             >
-              About
-            </Link> */}
+              Stories
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-2">

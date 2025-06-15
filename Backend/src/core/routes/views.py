@@ -15,7 +15,7 @@ CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS
 os.makedirs('static/audio', exist_ok=True)
 
 # Create the core blueprint
-core_bp = Blueprint("core", __name__)
+core_bp = Blueprint("core_routes", __name__)
 
 # ChatWithPDF API Key
 CHATWITHPDF_API_KEY = "sec_loUyJX9O4X2dJNHWgyNLjbWIiCr0qAaN"
@@ -71,6 +71,11 @@ def get_chatwithpdf(source_id, query):
         return response.json().get('content', '')
     else:
         raise Exception("Failed to chat with PDF.")
+#api endpoints
+@core_bp.route("/test", methods=['GET'])
+def test():
+    return jsonify({"message": "API is working!"})
+
 
 @core_bp.route("/indicator", methods=["POST"])
 def handle_indicator():
@@ -222,6 +227,7 @@ def generate_podcast():
         return jsonify({"audio_url": audio_url, "transcript": cleaned_summary})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
 
 # Register the blueprint
 app.register_blueprint(core_bp, url_prefix="")

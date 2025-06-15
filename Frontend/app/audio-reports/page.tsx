@@ -1,34 +1,49 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Download, Play, Share2, Pause, Clock, Calendar } from "lucide-react"
+import { useState } from "react";
+import { Download, Play, Share2, Pause, Clock, Calendar } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import { AudioPlayer } from "@/components/audio-player"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { AudioPlayer } from "@/components/audio-player";
 
 export default function AudioReportsPage() {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentReport, setCurrentReport] = useState<string | null>(null)
-  const [showTranscript, setShowTranscript] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentReport, setCurrentReport] = useState<string | null>(null);
+  const [showTranscript, setShowTranscript] = useState(false);
 
   const handlePlay = (reportId: string) => {
-    setCurrentReport(reportId)
-    setIsPlaying(true)
-  }
+    setCurrentReport(reportId);
+    setIsPlaying(true);
+  };
 
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="mb-6">
         <h1 className="text-3xl font-bold tracking-tight">Audio Reports</h1>
-        <p className="text-muted-foreground">Listen to economic narratives and insights</p>
+        <p className="text-muted-foreground">
+          Listen to economic narratives and insights
+        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-[300px_1fr]">
@@ -108,7 +123,11 @@ export default function AudioReportsPage() {
 
               <div className="flex items-center justify-between">
                 <Label htmlFor="show-transcript">Show Transcript</Label>
-                <Switch id="show-transcript" checked={showTranscript} onCheckedChange={setShowTranscript} />
+                <Switch
+                  id="show-transcript"
+                  checked={showTranscript}
+                  onCheckedChange={setShowTranscript}
+                />
               </div>
             </CardContent>
           </Card>
@@ -147,8 +166,12 @@ export default function AudioReportsPage() {
                 <SelectContent>
                   <SelectItem value="newest">Newest First</SelectItem>
                   <SelectItem value="oldest">Oldest First</SelectItem>
-                  <SelectItem value="duration-asc">Duration (Shortest)</SelectItem>
-                  <SelectItem value="duration-desc">Duration (Longest)</SelectItem>
+                  <SelectItem value="duration-asc">
+                    Duration (Shortest)
+                  </SelectItem>
+                  <SelectItem value="duration-desc">
+                    Duration (Longest)
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -158,10 +181,15 @@ export default function AudioReportsPage() {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div>
-                      <CardTitle>Germany's Economic Outlook – Q1 2024</CardTitle>
+                      <CardTitle>
+                        Germany's Economic Outlook – Q1 2024
+                      </CardTitle>
                       <CardDescription className="flex items-center mt-1">
                         <Clock className="h-3 w-3 mr-1" /> 2 min
-                        <Separator orientation="vertical" className="mx-2 h-3" />
+                        <Separator
+                          orientation="vertical"
+                          className="mx-2 h-3"
+                        />
                         <Calendar className="h-3 w-3 mr-1" /> March 15, 2024
                       </CardDescription>
                     </div>
@@ -170,17 +198,22 @@ export default function AudioReportsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Overview of Germany's economic performance in the first quarter with projections for the rest of the
-                    year. Topics include inflation trends, employment statistics, and GDP growth forecasts.
+                    Overview of Germany's economic performance in the first
+                    quarter with projections for the rest of the year. Topics
+                    include inflation trends, employment statistics, and GDP
+                    growth forecasts.
                   </p>
 
                   {showTranscript && (
                     <div className="mt-4 p-3 bg-muted rounded-md text-sm">
                       <p className="font-medium mb-2">Transcript:</p>
                       <p>
-                        Welcome to the DIW Economic Outlook for Q1 2024. Germany's economy has shown resilience in the
-                        first quarter, with GDP growth reaching 0.9% compared to the previous quarter. Inflation has
-                        stabilized at 4.2%, though this remains above the European Central Bank's target...
+                        Welcome to the DIW Economic Outlook for Q1 2024.
+                        Germany's economy has shown resilience in the first
+                        quarter, with GDP growth reaching 0.9% compared to the
+                        previous quarter. Inflation has stabilized at 4.2%,
+                        though this remains above the European Central Bank's
+                        target...
                       </p>
                     </div>
                   )}
@@ -210,7 +243,9 @@ export default function AudioReportsPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Regional Economic Disparities in Germany</CardTitle>
+                  <CardTitle>
+                    Regional Economic Disparities in Germany
+                  </CardTitle>
                   <CardDescription className="flex items-center mt-1">
                     <Clock className="h-3 w-3 mr-1" /> 3 min
                     <Separator orientation="vertical" className="mx-2 h-3" />
@@ -219,18 +254,23 @@ export default function AudioReportsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Analysis of economic performance across different German regions and states. This report highlights
-                    the growing disparities between urban centers and rural areas, with a focus on employment
-                    opportunities and industrial development.
+                    Analysis of economic performance across different German
+                    regions and states. This report highlights the growing
+                    disparities between urban centers and rural areas, with a
+                    focus on employment opportunities and industrial
+                    development.
                   </p>
 
                   {showTranscript && (
                     <div className="mt-4 p-3 bg-muted rounded-md text-sm">
                       <p className="font-medium mb-2">Transcript:</p>
                       <p>
-                        In this report, we examine the economic disparities across Germany's regions. While urban
-                        centers like Munich, Frankfurt, and Berlin continue to thrive with unemployment rates below 5%,
-                        rural areas in eastern Germany still face challenges with rates exceeding 8% in some regions...
+                        In this report, we examine the economic disparities
+                        across Germany's regions. While urban centers like
+                        Munich, Frankfurt, and Berlin continue to thrive with
+                        unemployment rates below 5%, rural areas in eastern
+                        Germany still face challenges with rates exceeding 8% in
+                        some regions...
                       </p>
                     </div>
                   )}
@@ -260,7 +300,9 @@ export default function AudioReportsPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Impact of Energy Transition on German Economy</CardTitle>
+                  <CardTitle>
+                    Impact of Energy Transition on German Economy
+                  </CardTitle>
                   <CardDescription className="flex items-center mt-1">
                     <Clock className="h-3 w-3 mr-1" /> 4 min
                     <Separator orientation="vertical" className="mx-2 h-3" />
@@ -269,18 +311,23 @@ export default function AudioReportsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Examination of how Germany's energy transition (Energiewende) is affecting various sectors of the
-                    economy. This report covers the costs and benefits of renewable energy expansion, impact on
-                    manufacturing, and future projections.
+                    Examination of how Germany's energy transition
+                    (Energiewende) is affecting various sectors of the economy.
+                    This report covers the costs and benefits of renewable
+                    energy expansion, impact on manufacturing, and future
+                    projections.
                   </p>
 
                   {showTranscript && (
                     <div className="mt-4 p-3 bg-muted rounded-md text-sm">
                       <p className="font-medium mb-2">Transcript:</p>
                       <p>
-                        Germany's ambitious energy transition continues to reshape its economic landscape. While initial
-                        investments in renewable infrastructure have created short-term costs, we're now seeing the
-                        emergence of a robust green technology sector that has created over 300,000 jobs nationwide...
+                        Germany's ambitious energy transition continues to
+                        reshape its economic landscape. While initial
+                        investments in renewable infrastructure have created
+                        short-term costs, we're now seeing the emergence of a
+                        robust green technology sector that has created over
+                        300,000 jobs nationwide...
                       </p>
                     </div>
                   )}
@@ -323,8 +370,9 @@ export default function AudioReportsPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      In-depth analysis of Germany's manufacturing sector performance, challenges, and outlook. This
-                      report has been played over 5,000 times.
+                      In-depth analysis of Germany's manufacturing sector
+                      performance, challenges, and outlook. This report has been
+                      played over 5,000 times.
                     </p>
                   </CardContent>
                   <CardFooter className="flex justify-between">
@@ -351,7 +399,8 @@ export default function AudioReportsPage() {
                   <CardHeader>
                     <CardTitle>Quarterly Economic Outlook Series</CardTitle>
                     <CardDescription>
-                      Regular series covering Germany's economic performance each quarter
+                      Regular series covering Germany's economic performance
+                      each quarter
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -390,19 +439,19 @@ export default function AudioReportsPage() {
             isPlaying={isPlaying}
             onPlayPause={() => setIsPlaying(!isPlaying)}
             onClose={() => {
-              setIsPlaying(false)
-              setCurrentReport(null)
+              setIsPlaying(false);
+              setCurrentReport(null);
             }}
             title={
               currentReport === "report-1"
                 ? "Germany's Economic Outlook – Q1 2024"
                 : currentReport === "report-2"
-                  ? "Regional Economic Disparities in Germany"
-                  : "Impact of Energy Transition on German Economy"
+                ? "Regional Economic Disparities in Germany"
+                : "Impact of Energy Transition on German Economy"
             }
           />
         </div>
       )}
     </div>
-  )
+  );
 }

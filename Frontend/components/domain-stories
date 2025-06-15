@@ -1,0 +1,364 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import {
+  Search,
+  Filter,
+  BookOpen,
+  Star,
+  Sparkles,
+  Grid3X3,
+  List,
+} from "lucide-react";
+import { domains } from "@/data/domains";
+import { DomainCard } from "@/components/domain-card";
+import { StoryCard } from "@/components/story-card";
+import { StoryReader } from "@/components/story-reader";
+import { Domain, Story } from "@/types/story";
+
+/**
+ * @typedef {"domains" | "stories" | "reader"} ViewMode
+ */
+
+// Removed DomainStoriesProps interface because interfaces are not allowed in JavaScript files.
+
+export function DomainStories({
+  className = "",
+  showHeader = true,
+  defaultDomain,
+  compact = false,
+}) {
+  const [viewMode, setViewMode] = useState(
+    defaultDomain ? "stories" : "domains"
+  );
+  const [selectedDomain, setSelectedDomain] =
+    (useState < Domain) |
+    (null >
+      (defaultDomain
+        ? domains.find((d) => d.id === defaultDomain) || null
+        : null));
+  const [selectedStory, setSelectedStory] = (useState < Story) | (null > null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [layoutMode, setLayoutMode] = (useState < "grid") | ("list" > "grid");
+
+  const handleDomainSelect = (domain) => {
+    setSelectedDomain(domain);
+    setViewMode("stories");
+  };
+
+  const handleStorySelect = (story) => {
+    setSelectedStory(story);
+    setViewMode("reader");
+  };
+
+  const handleBackToDomains = () => {
+    setSelectedDomain(null);
+    setSelectedStory(null);
+    setViewMode("domains");
+  };
+
+  const handleBackToStories = () => {
+    setSelectedStory(null);
+    setViewMode("stories");
+  };
+
+  const filteredDomains = domains.filter(
+    (domain) =>
+      domain.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      domain.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredStories =
+    selectedDomain?.stories.filter(
+      (story) =>
+        story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        story.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        story.tags.some((tag) =>
+          tag.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+    ) || [];
+
+  const totalStories = domains.reduce(
+    (acc, domain) => acc + domain.totalStories,
+    0
+  );
+  const totalReadTime = domains.reduce(
+    (acc, domain) => acc + domain.totalReadTime,
+    0
+  );
+
+  if (viewMode === "reader" && selectedStory && selectedDomain) {
+    return (
+      <div className={className}>
+        <StoryReader
+          story={selectedStory}
+          onBack={handleBackToStories}
+          domainColor={selectedDomain.color}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 ${className}`}
+    >
+      {/* Header */}
+      {showHeader && (
+        <div className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-10">
+          <div
+            className={`${
+              compact ? "px-4 py-4" : "container mx-auto px-6 py-6"
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {viewMode !== "domains" && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={
+                      viewMode === "stories"
+                        ? handleBackToDomains
+                        : handleBackToStories
+                    }
+                  >
+                    ← Back
+                  </Button>
+                )}
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
+                    <Sparkles className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h1
+                      className={`${
+                        compact ? "text-2xl" : "text-3xl"
+                      } font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}
+                    >
+                      {viewMode === "domains"
+                        ? "Story Domains"
+                        : viewMode === "stories"
+                        ? selectedDomain?.name
+                        : selectedStory?.title}
+                    </h1>
+                    <p className="text-gray-600">
+                      {viewMode === "domains"
+                        ? "Explore stories across different domains"
+                        : viewMode === "stories"
+                        ? selectedDomain?.description
+                        : selectedStory?.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stats */}
+              {!compact && (
+                <div className="hidden md:flex items-center gap-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">
+                      {totalStories}
+                    </div>
+                    <div className="text-sm text-gray-600">Total Stories</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-600">
+                      {domains.length}
+                    </div>
+                    <div className="text-sm text-gray-600">Domains</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">
+                      {totalReadTime}
+                    </div>
+                    <div className="text-sm text-gray-600">Minutes</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Search and Filters */}
+            <div className="mt-6 flex items-center gap-4">
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  placeholder={
+                    viewMode === "domains"
+                      ? "Search domains..."
+                      : "Search stories..."
+                  }
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+
+              {viewMode === "stories" && (
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant={layoutMode === "grid" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setLayoutMode("grid")}
+                  >
+                    <Grid3X3 className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant={layoutMode === "list" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setLayoutMode("list")}
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+
+              <Button variant="outline" size="sm">
+                <Filter className="h-4 w-4 mr-2" />
+                Filter
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main Content */}
+      <div
+        className={`${compact ? "px-4 py-6" : "container mx-auto px-6 py-8"}`}
+      >
+        <AnimatePresence mode="wait">
+          {viewMode === "domains" && (
+            <motion.div
+              key="domains"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Featured Section */}
+              {!compact && (
+                <div className="mb-12">
+                  <div className="flex items-center gap-2 mb-6">
+                    <Star className="h-5 w-5 text-yellow-500" />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      Featured Domain
+                    </h2>
+                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    <DomainCard
+                      domain={domains[0]}
+                      onSelect={handleDomainSelect}
+                      isSelected={false}
+                    />
+                  </motion.div>
+                </div>
+              )}
+
+              {/* All Domains */}
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <BookOpen className="h-5 w-5 text-blue-500" />
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    All Domains
+                  </h2>
+                  <Badge variant="secondary">{filteredDomains.length}</Badge>
+                </div>
+                <div
+                  className={`grid gap-6 ${
+                    compact
+                      ? "grid-cols-1 md:grid-cols-2"
+                      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  }`}
+                >
+                  {filteredDomains.map((domain, index) => (
+                    <motion.div
+                      key={domain.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <DomainCard
+                        domain={domain}
+                        onSelect={handleDomainSelect}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {viewMode === "stories" && selectedDomain && (
+            <motion.div
+              key="stories"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {filteredStories.length > 0 ? (
+                <div
+                  className={`grid gap-6 ${
+                    layoutMode === "grid"
+                      ? compact
+                        ? "grid-cols-1 md:grid-cols-2"
+                        : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                      : "grid-cols-1"
+                  }`}
+                >
+                  {filteredStories.map((story, index) => (
+                    <motion.div
+                      key={story.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <StoryCard
+                        story={story}
+                        onSelect={handleStorySelect}
+                        domainColor={selectedDomain.color}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <div className="text-gray-400 mb-4">
+                    <BookOpen className="h-16 w-16 mx-auto" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                    No Stories Yet
+                  </h3>
+                  <p className="text-gray-500 mb-6">
+                    This domain is ready for stories. Add your first story to
+                    get started!
+                  </p>
+                  <Button variant="outline">Add Story</Button>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+// Export individual components for more granular usage
+export { DomainCard } from "@/components/domain-card";
+export { StoryCard } from "@/components/story-card";
+export { StoryReader } from "@/components/story-reader";
+
+// Export types for external usage
+// (Type-only exports are not allowed in JS files)
+
+// Export data for external access
+export { domains } from "@/data/domains";

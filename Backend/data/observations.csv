@@ -1,0 +1,683 @@
+id,visual_entity_id,indicator_id,country,year,value,notes
+575570705390584432,1,1,Lithuania,2024,-0.65,Scenario: Multilateral Sanctions %
+10706688660754809079,1,1,Lithuania,2024,-0.5,Scenario: Unilateral Sanctions %
+16126247218475781637,1,1,Estonia,2024,-0.35,Scenario: Multilateral Sanctions %
+8433022380166302190,1,1,Estonia,2024,-0.4,Scenario: Unilateral Sanctions %
+9232756817783178013,1,1,Ukraine,2024,-0.35,Scenario: Multilateral Sanctions %
+2749678623958647377,1,1,Ukraine,2024,-0.45,Scenario: Unilateral Sanctions %
+3640956381777055741,1,1,Latvia,2024,-0.32,Scenario: Multilateral Sanctions %
+15925829418713892966,1,1,Latvia,2024,-0.38,Scenario: Unilateral Sanctions %
+14102975015643727872,1,1,Georgia,2024,-0.28,Scenario: Multilateral Sanctions %
+13105635791886435861,1,1,Georgia,2024,-0.35,Scenario: Unilateral Sanctions %
+10193182405514579593,1,1,Malta,2024,-0.22,Scenario: Multilateral Sanctions %
+18417304154054935975,1,1,Malta,2024,-0.25,Scenario: Unilateral Sanctions %
+17114527593814968288,1,1,Slovakia,2024,-0.18,Scenario: Multilateral Sanctions %
+12022500752616147115,1,1,Slovakia,2024,-0.2,Scenario: Unilateral Sanctions %
+17995323984786506032,1,1,Bulgaria,2024,-0.15,Scenario: Multilateral Sanctions %
+10000240533572831195,1,1,Bulgaria,2024,-0.18,Scenario: Unilateral Sanctions %
+11954206321291054673,1,1,Poland,2024,-0.12,Scenario: Multilateral Sanctions %
+17576954930822529408,1,1,Poland,2024,-0.15,Scenario: Unilateral Sanctions %
+14102405644017683174,1,1,Hungary,2024,-0.1,Scenario: Multilateral Sanctions %
+13863520107597023327,1,1,Hungary,2024,-0.12,Scenario: Unilateral Sanctions %
+11999116552725220427,1,1,Finland,2024,-0.08,Scenario: Multilateral Sanctions %
+15415951224166108156,1,1,Finland,2024,-0.1,Scenario: Unilateral Sanctions %
+7146396207733162200,1,1,Czech Republic,2024,-0.06,Scenario: Multilateral Sanctions %
+6732788797849095013,1,1,Czech Republic,2024,-0.08,Scenario: Unilateral Sanctions %
+15628562787510209297,1,1,Slovenia,2024,-0.05,Scenario: Multilateral Sanctions %
+13817500048781034147,1,1,Slovenia,2024,-0.06,Scenario: Unilateral Sanctions %
+15003826310442731261,1,1,Cyprus,2024,-0.04,Scenario: Multilateral Sanctions %
+8932974281758363465,1,1,Cyprus,2024,-0.05,Scenario: Unilateral Sanctions %
+7342342434908685089,1,1,Belgium,2024,-0.035,Scenario: Multilateral Sanctions %
+722423717500177810,1,1,Belgium,2024,-0.04,Scenario: Unilateral Sanctions %
+862681885563437128,1,1,Greece,2024,-0.03,Scenario: Multilateral Sanctions %
+9630352861414902069,1,1,Greece,2024,-0.035,Scenario: Unilateral Sanctions %
+11225769379247115032,1,1,Albania,2024,-0.025,Scenario: Multilateral Sanctions %
+14740371408903425606,1,1,Albania,2024,-0.03,Scenario: Unilateral Sanctions %
+1567772833420886399,1,1,Luxembourg,2024,-0.02,Scenario: Multilateral Sanctions %
+4267887655980385143,1,1,Luxembourg,2024,-0.025,Scenario: Unilateral Sanctions %
+11368266784214829033,1,1,Germany,2024,-0.018,Scenario: Multilateral Sanctions %
+8030538179044525435,1,1,Germany,2024,-0.022,Scenario: Unilateral Sanctions %
+12741882857409824271,1,1,Croatia,2024,-0.015,Scenario: Multilateral Sanctions %
+7128289457879600227,1,1,Croatia,2024,-0.018,Scenario: Unilateral Sanctions %
+17497380813139034834,1,1,Austria,2024,-0.012,Scenario: Multilateral Sanctions %
+10998674627749430816,1,1,Austria,2024,-0.015,Scenario: Unilateral Sanctions %
+8664728669474344876,1,1,Netherlands,2024,-0.01,Scenario: Multilateral Sanctions %
+5659458939230241019,1,1,Netherlands,2024,-0.012,Scenario: Unilateral Sanctions %
+2923304488757118374,1,1,Ireland,2024,-0.008,Scenario: Multilateral Sanctions %
+13896611496667466004,1,1,Ireland,2024,-0.01,Scenario: Unilateral Sanctions %
+17810405844734003418,1,1,Denmark,2024,-0.006,Scenario: Multilateral Sanctions %
+2225459525921554762,1,1,Denmark,2024,-0.008,Scenario: Unilateral Sanctions %
+17832266078419305741,1,1,Italy,2024,-0.005,Scenario: Multilateral Sanctions %
+2901466123035626388,1,1,Italy,2024,-0.006,Scenario: Unilateral Sanctions %
+16935715416432986545,1,1,Sweden,2024,-0.004,Scenario: Multilateral Sanctions %
+16348542722769375108,1,1,Sweden,2024,-0.005,Scenario: Unilateral Sanctions %
+3293294431871453254,1,1,Romania,2024,-0.003,Scenario: Multilateral Sanctions %
+2779829856964986304,1,1,Romania,2024,-0.004,Scenario: Unilateral Sanctions %
+5192472989127756903,1,1,Spain,2024,-0.002,Scenario: Multilateral Sanctions %
+12101285335461088699,1,1,Spain,2024,-0.003,Scenario: Unilateral Sanctions %
+16308766771481627645,1,1,Norway,2024,-0.001,Scenario: Multilateral Sanctions %
+8511755148866962282,1,1,Norway,2024,-0.002,Scenario: Unilateral Sanctions %
+8292320926496014765,1,1,Portugal,2024,0,Scenario: Multilateral Sanctions %
+12875207546291374067,1,1,Portugal,2024,0,Scenario: Unilateral Sanctions %
+5939918854320571281,1,1,France,2024,0.001,Scenario: Multilateral Sanctions %
+7565278867358043612,1,1,France,2024,0,Scenario: Unilateral Sanctions %
+11160577703912164005,1,1,UK,2024,0.002,Scenario: Multilateral Sanctions %
+10346949563949272286,1,1,UK,2024,0.001,Scenario: Unilateral Sanctions %
+14691042132322896988,1,1,Japan,2024,0.003,Scenario: Multilateral Sanctions %
+6006413207166865385,1,1,Japan,2024,0.002,Scenario: Unilateral Sanctions %
+10085241279123770636,1,1,New Zealand,2024,0.004,Scenario: Multilateral Sanctions %
+1018156065432749247,1,1,New Zealand,2024,0.003,Scenario: Unilateral Sanctions %
+2537721518701563126,1,1,USA,2024,0.005,Scenario: Multilateral Sanctions %
+854601101018808322,1,1,USA,2024,0.004,Scenario: Unilateral Sanctions %
+4183037308931755034,1,1,Canada,2024,0.006,Scenario: Multilateral Sanctions %
+15187755674548260292,1,1,Canada,2024,0.005,Scenario: Unilateral Sanctions %
+16209984617186871973,1,1,Australia,2024,0.007,Scenario: Multilateral Sanctions %
+8732750064910616790,1,1,Australia,2024,0.006,Scenario: Unilateral Sanctions %
+16598286083798680032,2,1,Germany,2024,-0.32,Scenario: Multilateral Sanctions %
+6514296022064188483,2,1,Germany,2024,-0.28,Scenario: Unilateral Sanctions %
+10913194592861703328,2,1,USA,2024,-0.31,Scenario: Multilateral Sanctions %
+5210538971398359480,2,1,USA,2024,-0.26,Scenario: Unilateral Sanctions %
+5701141644535025622,2,1,Netherlands,2024,-0.16,Scenario: Multilateral Sanctions %
+9516538972847623374,2,1,Netherlands,2024,-0.14,Scenario: Unilateral Sanctions %
+17430966463049121947,2,1,Italy,2024,-0.15,Scenario: Multilateral Sanctions %
+4297161910752595747,2,1,Italy,2024,-0.13,Scenario: Unilateral Sanctions %
+309042815857804932,2,1,Poland,2024,-0.14,Scenario: Multilateral Sanctions %
+17709105166733295738,2,1,Poland,2024,-0.12,Scenario: Unilateral Sanctions %
+3965164164652744810,2,1,Ukraine,2024,-0.13,Scenario: Multilateral Sanctions %
+822329033602386088,2,1,Ukraine,2024,-0.11,Scenario: Unilateral Sanctions %
+9936177304463428797,2,1,France,2024,-0.12,Scenario: Multilateral Sanctions %
+8884691293081914605,2,1,France,2024,-0.1,Scenario: Unilateral Sanctions %
+11264339358801543777,2,1,Belgium,2024,-0.11,Scenario: Multilateral Sanctions %
+11083526777029611233,2,1,Belgium,2024,-0.09,Scenario: Unilateral Sanctions %
+943551776523961052,2,1,Finland,2024,-0.1,Scenario: Multilateral Sanctions %
+17995876114842734009,2,1,Finland,2024,-0.08,Scenario: Unilateral Sanctions %
+11886830894734331367,2,1,Japan,2024,-0.095,Scenario: Multilateral Sanctions %
+13481491797736965770,2,1,Japan,2024,-0.075,Scenario: Unilateral Sanctions %
+14851055042886518614,2,1,Spain,2024,-0.09,Scenario: Multilateral Sanctions %
+12483123162557924357,2,1,Spain,2024,-0.07,Scenario: Unilateral Sanctions %
+3228275241301265749,2,1,UK,2024,-0.085,Scenario: Multilateral Sanctions %
+13564220532513783873,2,1,UK,2024,-0.065,Scenario: Unilateral Sanctions %
+6656191760914140401,2,1,Lithuania,2024,-0.08,Scenario: Multilateral Sanctions %
+768221544465648716,2,1,Lithuania,2024,-0.06,Scenario: Unilateral Sanctions %
+8353934502812402098,2,1,Czech Republic,2024,-0.075,Scenario: Multilateral Sanctions %
+420869112567251746,2,1,Czech Republic,2024,-0.055,Scenario: Unilateral Sanctions %
+4524711700487359003,2,1,Norway,2024,-0.07,Scenario: Multilateral Sanctions %
+4161891610220316518,2,1,Norway,2024,-0.05,Scenario: Unilateral Sanctions %
+16301442721517947356,2,1,Hungary,2024,-0.065,Scenario: Multilateral Sanctions %
+15673997217111884017,2,1,Hungary,2024,-0.045,Scenario: Unilateral Sanctions %
+10864484964712270506,2,1,Denmark,2024,-0.06,Scenario: Multilateral Sanctions %
+9572099196349268500,2,1,Denmark,2024,-0.04,Scenario: Unilateral Sanctions %
+3479284531720309865,2,1,Canada,2024,-0.055,Scenario: Multilateral Sanctions %
+7704094157913800771,2,1,Canada,2024,-0.035,Scenario: Unilateral Sanctions %
+16460895900603665469,2,1,Sweden,2024,-0.05,Scenario: Multilateral Sanctions %
+1038199949272370110,2,1,Sweden,2024,-0.03,Scenario: Unilateral Sanctions %
+8283747826085089257,2,1,Austria,2024,-0.045,Scenario: Multilateral Sanctions %
+3210459760733799051,2,1,Austria,2024,-0.025,Scenario: Unilateral Sanctions %
+2797433849207737432,2,1,Greece,2024,-0.04,Scenario: Multilateral Sanctions %
+208582761534407503,2,1,Greece,2024,-0.02,Scenario: Unilateral Sanctions %
+3944892379164328251,2,1,Ireland,2024,-0.035,Scenario: Multilateral Sanctions %
+3240550314997206625,2,1,Ireland,2024,-0.015,Scenario: Unilateral Sanctions %
+1023299568434695119,2,1,Slovakia,2024,-0.03,Scenario: Multilateral Sanctions %
+4590862727540985097,2,1,Slovakia,2024,-0.01,Scenario: Unilateral Sanctions %
+16495722360630823011,2,1,Estonia,2024,-0.025,Scenario: Multilateral Sanctions %
+7064581797654316875,2,1,Estonia,2024,-0.005,Scenario: Unilateral Sanctions %
+16851698455982067589,2,1,Australia,2024,-0.02,Scenario: Multilateral Sanctions %
+208039501636128683,2,1,Australia,2024,0,Scenario: Unilateral Sanctions %
+15213610039850518975,2,1,Romania,2024,-0.015,Scenario: Multilateral Sanctions %
+12237095797099678506,2,1,Romania,2024,0.005,Scenario: Unilateral Sanctions %
+7610763178532686093,2,1,Bulgaria,2024,-0.01,Scenario: Multilateral Sanctions %
+13407434585282203328,2,1,Bulgaria,2024,0.01,Scenario: Unilateral Sanctions %
+6179591935593762097,2,1,Latvia,2024,-0.005,Scenario: Multilateral Sanctions %
+4058553506515930818,2,1,Latvia,2024,0.015,Scenario: Unilateral Sanctions %
+2245269186451492473,2,1,Portugal,2024,0,Scenario: Multilateral Sanctions %
+2358265242062506723,2,1,Portugal,2024,0.02,Scenario: Unilateral Sanctions %
+2047544799818696262,2,1,Croatia,2024,0.005,Scenario: Multilateral Sanctions %
+17440203674591250072,2,1,Croatia,2024,0.025,Scenario: Unilateral Sanctions %
+1148853251815327590,2,1,Slovenia,2024,0.01,Scenario: Multilateral Sanctions %
+4778756878735721244,2,1,Slovenia,2024,0.03,Scenario: Unilateral Sanctions %
+1955336199786480163,2,1,Luxembourg,2024,0.015,Scenario: Multilateral Sanctions %
+14920464325918215918,2,1,Luxembourg,2024,0.035,Scenario: Unilateral Sanctions %
+15088434081683882669,2,1,Cyprus,2024,0.02,Scenario: Multilateral Sanctions %
+7589979603591841390,2,1,Cyprus,2024,0.04,Scenario: Unilateral Sanctions %
+7364366603607494323,2,1,New Zealand,2024,0.025,Scenario: Multilateral Sanctions %
+11884335649253900698,2,1,New Zealand,2024,0.045,Scenario: Unilateral Sanctions %
+9462956978023711886,2,1,Malta,2024,0.03,Scenario: Multilateral Sanctions %
+9386673310407541700,2,1,Malta,2024,0.05,Scenario: Unilateral Sanctions %
+5099844837259169553,2,1,Georgia,2024,0.035,Scenario: Multilateral Sanctions %
+4018242602295250332,2,1,Georgia,2024,0.055,Scenario: Unilateral Sanctions %
+2771166410576578828,2,1,Albania,2024,0.04,Scenario: Multilateral Sanctions %
+6507844401842899337,2,1,Albania,2024,0.06,Scenario: Unilateral Sanctions %
+9384215573402569364,2,1,Montenegro,2024,0.045,Scenario: Multilateral Sanctions %
+16030391235163736512,2,1,Montenegro,2024,0.065,Scenario: Unilateral Sanctions %
+6072767055109705117,3,2,Western Germany,2024,Male breadwinner model,Group: Employment_Model
+15210497885093448809,3,2,Western Germany,2024,23,Group: Toddler_1to2_years
+397153720127605567,3,2,Western Germany,2024,6,Group: Preschool_3to5_years
+6047444822925328508,3,2,Western Germany,2024,6,Group: Primary_school_6to10_years
+17622978456028595059,3,2,Western Germany,2024,One-and-a-half-earner model,Group: Employment_Model
+11261019760152691025,3,2,Western Germany,2024,48,Group: Toddler_1to2_years
+11337836470833598303,3,2,Western Germany,2024,62,Group: Preschool_3to5_years
+15393444338262690770,3,2,Western Germany,2024,60,Group: Primary_school_6to10_years
+2826099363305833148,3,2,Western Germany,2024,Adult worker model,Group: Employment_Model
+6237709986181169357,3,2,Western Germany,2024,15,Group: Toddler_1to2_years
+6063080487253592440,3,2,Western Germany,2024,16,Group: Preschool_3to5_years
+8342212078040400071,3,2,Western Germany,2024,17,Group: Primary_school_6to10_years
+2528078194266951630,3,2,Western Germany,2024,Dual earner/dual carer model,Group: Employment_Model
+6488600119661969623,3,2,Western Germany,2024,3,Group: Toddler_1to2_years
+12554838412612160313,3,2,Western Germany,2024,2,Group: Preschool_3to5_years
+4194550008014521951,3,2,Western Germany,2024,2,Group: Primary_school_6to10_years
+6270671874473803787,3,2,Western Germany,2024,Other,Group: Employment_Model
+2662884980172934702,3,2,Western Germany,2024,11,Group: Toddler_1to2_years
+12588600147999278623,3,2,Western Germany,2024,14,Group: Preschool_3to5_years
+94262029451216871,3,2,Western Germany,2024,15,Group: Primary_school_6to10_years
+466437615305050417,3,2,Eastern Germany,2024,Male breadwinner model,Group: Employment_Model
+678950935755048163,3,2,Eastern Germany,2024,13,Group: Toddler_1to2_years
+3474438824590397242,3,2,Eastern Germany,2024,3,Group: Preschool_3to5_years
+3986124085885355645,3,2,Eastern Germany,2024,3,Group: Primary_school_6to10_years
+2200422899329354091,3,2,Eastern Germany,2024,One-and-a-half-earner model,Group: Employment_Model
+8633709294576421799,3,2,Eastern Germany,2024,42,Group: Toddler_1to2_years
+15459892574954014760,3,2,Eastern Germany,2024,36,Group: Preschool_3to5_years
+13840619245347946969,3,2,Eastern Germany,2024,36,Group: Primary_school_6to10_years
+15692284572075181272,3,2,Eastern Germany,2024,Adult worker model,Group: Employment_Model
+12355655316022575445,3,2,Eastern Germany,2024,22,Group: Toddler_1to2_years
+6459752288197430856,3,2,Eastern Germany,2024,39,Group: Preschool_3to5_years
+16310595364065005449,3,2,Eastern Germany,2024,39,Group: Primary_school_6to10_years
+13305598908498462489,3,2,Eastern Germany,2024,Dual earner/dual carer model,Group: Employment_Model
+8557865906398645019,3,2,Eastern Germany,2024,5,Group: Toddler_1to2_years
+3409883659052664091,3,2,Eastern Germany,2024,4,Group: Preschool_3to5_years
+6851865067867884684,3,2,Eastern Germany,2024,4,Group: Primary_school_6to10_years
+11910958432155355451,3,2,Eastern Germany,2024,Other,Group: Employment_Model
+9723532895418335897,3,2,Eastern Germany,2024,18,Group: Toddler_1to2_years
+17751641091800449706,3,2,Eastern Germany,2024,18,Group: Preschool_3to5_years
+7245411411518111968,3,2,Eastern Germany,2024,18,Group: Primary_school_6to10_years
+2498491653589058110,4,2,Western Germany,2024,Male breadwinner model,Group: Employment_Model
+2665257415134105169,4,2,Western Germany,2024,16,Group: Toddler_1to2_years
+16814632897227342091,4,2,Western Germany,2024,4,Group: Preschool_3to5_years
+5145783623766918679,4,2,Western Germany,2024,3,Group: Primary_school_6to10_years
+6231008674556955437,4,2,Western Germany,2024,One-and-a-half-earner model,Group: Employment_Model
+7837437435499790590,4,2,Western Germany,2024,38,Group: Toddler_1to2_years
+7406054057220261110,4,2,Western Germany,2024,45,Group: Preschool_3to5_years
+1337747065989320607,4,2,Western Germany,2024,40,Group: Primary_school_6to10_years
+12210075315738266458,4,2,Western Germany,2024,Adult worker model,Group: Employment_Model
+1183658870048836878,4,2,Western Germany,2024,13,Group: Toddler_1to2_years
+14665243835238535156,4,2,Western Germany,2024,21,Group: Preschool_3to5_years
+1357568397271387362,4,2,Western Germany,2024,34,Group: Primary_school_6to10_years
+17947952985693177418,4,2,Western Germany,2024,Dual earner/dual carer model,Group: Employment_Model
+7941513775655174384,4,2,Western Germany,2024,26,Group: Toddler_1to2_years
+2122246465592707668,4,2,Western Germany,2024,23,Group: Preschool_3to5_years
+4370093511157173660,4,2,Western Germany,2024,18,Group: Primary_school_6to10_years
+3240272990799677012,4,2,Western Germany,2024,Other,Group: Employment_Model
+8877288146258184707,4,2,Western Germany,2024,7,Group: Toddler_1to2_years
+6694162373742709199,4,2,Western Germany,2024,7,Group: Preschool_3to5_years
+4401399724826184670,4,2,Western Germany,2024,5,Group: Primary_school_6to10_years
+16494772387120828025,4,2,Eastern Germany,2024,Male breadwinner model,Group: Employment_Model
+5284125276490254517,4,2,Eastern Germany,2024,4,Group: Toddler_1to2_years
+2139804636229814574,4,2,Eastern Germany,2024,2,Group: Preschool_3to5_years
+10283223614549017463,4,2,Eastern Germany,2024,1,Group: Primary_school_6to10_years
+4090993541811356600,4,2,Eastern Germany,2024,One-and-a-half-earner model,Group: Employment_Model
+6916344856800477944,4,2,Eastern Germany,2024,27,Group: Toddler_1to2_years
+8718691282315264487,4,2,Eastern Germany,2024,20,Group: Preschool_3to5_years
+1199878929400547014,4,2,Eastern Germany,2024,19,Group: Primary_school_6to10_years
+15131262857835857018,4,2,Eastern Germany,2024,Adult worker model,Group: Employment_Model
+5701538536215235133,4,2,Eastern Germany,2024,30,Group: Toddler_1to2_years
+6432791561559886322,4,2,Eastern Germany,2024,49,Group: Preschool_3to5_years
+2436959076094526730,4,2,Eastern Germany,2024,58,Group: Primary_school_6to10_years
+8041595973112187197,4,2,Eastern Germany,2024,Dual earner/dual carer model,Group: Employment_Model
+11143462275827387744,4,2,Eastern Germany,2024,35,Group: Toddler_1to2_years
+5037697714701290784,4,2,Eastern Germany,2024,26,Group: Preschool_3to5_years
+9667618838851961934,4,2,Eastern Germany,2024,17,Group: Primary_school_6to10_years
+15128410213091528658,4,2,Eastern Germany,2024,Other,Group: Employment_Model
+11356074553914707923,4,2,Eastern Germany,2024,4,Group: Toddler_1to2_years
+5555701677843630488,4,2,Eastern Germany,2024,3,Group: Preschool_3to5_years
+14990626162481647530,4,2,Eastern Germany,2024,5,Group: Primary_school_6to10_years
+1165406661997709465,5,2,Adult worker model,2024,4861,Group: Net_Household_Income
+7740820642030177132,5,2,Adult worker model,2024,1023,Group: Taxes
+6513547542498266815,5,2,Adult worker model,2024,1492,Group: Social_Security_Contributions
+14869499313972659687,5,2,Adult worker model,2024,250,Group: Transfers
+3795650315199598143,5,2,Adult worker model,2024,7626,Group: Total_Gross_Income
+1596145372162704847,5,2,Dual earner/dual carer model,2024,3832,Group: Net_Household_Income
+4473516561197190155,5,2,Dual earner/dual carer model,2024,581,Group: Taxes
+16384788231174769570,5,2,Dual earner/dual carer model,2024,1119,Group: Social_Security_Contributions
+14485272544868060270,5,2,Dual earner/dual carer model,2024,250,Group: Transfers
+14723091712995379454,5,2,Dual earner/dual carer model,2024,5782,Group: Total_Gross_Income
+10135323660703842357,5,2,One-and-a-half-earner model (part time),2024,3952,Group: Net_Household_Income
+8647708271314225499,5,2,One-and-a-half-earner model (part time),2024,628,Group: Taxes
+11633307215087944128,5,2,One-and-a-half-earner model (part time),2024,1131,Group: Social_Security_Contributions
+16190786125685411426,5,2,One-and-a-half-earner model (part time),2024,250,Group: Transfers
+537200457290369172,5,2,One-and-a-half-earner model (part time),2024,5961,Group: Total_Gross_Income
+14048444494110999571,5,2,One-and-a-half-earner model (mini-job),2024,3440,Group: Net_Household_Income
+17079737492438338190,5,2,One-and-a-half-earner model (mini-job),2024,289,Group: Taxes
+15013147382882585748,5,2,One-and-a-half-earner model (mini-job),2024,819,Group: Social_Security_Contributions
+13542521475281473372,5,2,One-and-a-half-earner model (mini-job),2024,250,Group: Transfers
+17384824640633196101,5,2,One-and-a-half-earner model (mini-job),2024,4798,Group: Total_Gross_Income
+10242822650101776825,5,2,Male breadwinner model,2024,2941,Group: Net_Household_Income
+3696259062051653310,5,2,Male breadwinner model,2024,289,Group: Taxes
+1827545973301726756,5,2,Male breadwinner model,2024,819,Group: Social_Security_Contributions
+15737908131611952284,5,2,Male breadwinner model,2024,250,Group: Transfers
+15214797530748504984,5,2,Male breadwinner model,2024,4299,Group: Total_Gross_Income
+5048110498689403707,6,2,Adult worker model,2024,14.02,Group: Net_Income_Per_Hour_EUR
+2295654416379036305,6,2,Dual earner/dual carer model,2024,14.74,Group: Net_Income_Per_Hour_EUR
+13369159061436124149,6,2,One-and-a-half-earner model (part time),2024,15.2,Group: Net_Income_Per_Hour_EUR
+2930270558012588315,6,2,One-and-a-half-earner model (mini-job),2024,17.26,Group: Net_Income_Per_Hour_EUR
+11615851247458471607,6,2,Male breadwinner model,2024,16.96,Group: Net_Income_Per_Hour_EUR
+12180645619589074744,7,3,ASEAN,2024,4,Group: Policy_Embeddedness
+1472365777209478150,7,3,ASEAN,2024,4,Group: Sectoral_Coverage
+16488640553046787705,7,3,ASEAN,2024,4,Group: Screening_Approach
+1637794193561633775,7,3,ASEAN,2024,2,Group: Target_Group
+3830273015851076328,7,3,ASEAN,2024,2,Group: Reporting_Disclosure
+3642451090643766397,7,3,ASEAN,2024,3.2,Group: Overall_Score
+14949076909515950879,7,3,Bangladesh,2024,4,Group: Policy_Embeddedness
+4906373547964974862,7,3,Bangladesh,2024,3,Group: Sectoral_Coverage
+10950050766105366033,7,3,Bangladesh,2024,2,Group: Screening_Approach
+9809190992566898197,7,3,Bangladesh,2024,2,Group: Target_Group
+13185359583589385362,7,3,Bangladesh,2024,3,Group: Reporting_Disclosure
+5759712419508405060,7,3,Bangladesh,2024,2.8,Group: Overall_Score
+332494251915886675,7,3,Brazil,2024,4,Group: Policy_Embeddedness
+1409641117495542289,7,3,Brazil,2024,4,Group: Sectoral_Coverage
+17500996259477735627,7,3,Brazil,2024,2,Group: Screening_Approach
+15580147485915891400,7,3,Brazil,2024,2,Group: Target_Group
+3177641585072361419,7,3,Brazil,2024,2,Group: Reporting_Disclosure
+9834987294976590602,7,3,Brazil,2024,2.8,Group: Overall_Score
+1591489040309044860,7,3,China,2024,3,Group: Policy_Embeddedness
+3287886249243722730,7,3,China,2024,4,Group: Sectoral_Coverage
+6305889397792656503,7,3,China,2024,2,Group: Screening_Approach
+811360134229150419,7,3,China,2024,2,Group: Target_Group
+15282075728735324969,7,3,China,2024,3,Group: Reporting_Disclosure
+11629686905944229820,7,3,China,2024,2.8,Group: Overall_Score
+13984977379867050331,7,3,Columbia,2024,4,Group: Policy_Embeddedness
+10117752671642076893,7,3,Columbia,2024,4,Group: Sectoral_Coverage
+14844125564424703999,7,3,Columbia,2024,4,Group: Screening_Approach
+12506660851879920153,7,3,Columbia,2024,2,Group: Target_Group
+12629572238958415580,7,3,Columbia,2024,1,Group: Reporting_Disclosure
+14904902594832975677,7,3,Columbia,2024,3,Group: Overall_Score
+2661853838790118806,7,3,EU,2024,4,Group: Policy_Embeddedness
+8737617960339130830,7,3,EU,2024,4,Group: Sectoral_Coverage
+13963092078651721738,7,3,EU,2024,3,Group: Screening_Approach
+14631110905245090287,7,3,EU,2024,4,Group: Target_Group
+17418037620505595642,7,3,EU,2024,3,Group: Reporting_Disclosure
+5507402980539187470,7,3,EU,2024,3.6,Group: Overall_Score
+10232408196364650552,7,3,Georgia,2024,4,Group: Policy_Embeddedness
+8663901899874323554,7,3,Georgia,2024,3,Group: Sectoral_Coverage
+16610528670711104621,7,3,Georgia,2024,3,Group: Screening_Approach
+5688865062282153385,7,3,Georgia,2024,2,Group: Target_Group
+12668614930405871433,7,3,Georgia,2024,3,Group: Reporting_Disclosure
+14525123412660668823,7,3,Georgia,2024,3,Group: Overall_Score
+15067421570020164715,7,3,Hong Kong,2024,4,Group: Policy_Embeddedness
+17919190799209811607,7,3,Hong Kong,2024,2,Group: Sectoral_Coverage
+5043034257130473899,7,3,Hong Kong,2024,4,Group: Screening_Approach
+12340920614367609182,7,3,Hong Kong,2024,2,Group: Target_Group
+5099283529079540009,7,3,Hong Kong,2024,2,Group: Reporting_Disclosure
+14209354936931405787,7,3,Hong Kong,2024,2.8,Group: Overall_Score
+455157584345056285,7,3,Indonesia,2024,4,Group: Policy_Embeddedness
+3659010057351349478,7,3,Indonesia,2024,3,Group: Sectoral_Coverage
+12607497509431036859,7,3,Indonesia,2024,2,Group: Screening_Approach
+17286794178202912198,7,3,Indonesia,2024,2,Group: Target_Group
+897875783639188632,7,3,Indonesia,2024,2,Group: Reporting_Disclosure
+14150243806648026095,7,3,Indonesia,2024,2.6,Group: Overall_Score
+8847791389384396070,7,3,Israel,2024,3,Group: Policy_Embeddedness
+4279986977329727771,7,3,Israel,2024,3,Group: Sectoral_Coverage
+15933656582622954063,7,3,Israel,2024,3,Group: Screening_Approach
+16870413967149582776,7,3,Israel,2024,2,Group: Target_Group
+10599275057120038430,7,3,Israel,2024,1,Group: Reporting_Disclosure
+16244560129619345796,7,3,Israel,2024,2.4,Group: Overall_Score
+9803231996122382360,7,3,Japan,2024,3,Group: Policy_Embeddedness
+16603618250448847674,7,3,Japan,2024,3,Group: Sectoral_Coverage
+10272681087055511932,7,3,Japan,2024,4,Group: Screening_Approach
+7711805810952130079,7,3,Japan,2024,2,Group: Target_Group
+14102027047261456336,7,3,Japan,2024,2,Group: Reporting_Disclosure
+17380871657162231267,7,3,Japan,2024,2.8,Group: Overall_Score
+10125332316324054215,7,3,Kazakhstan,2024,4,Group: Policy_Embeddedness
+14260367324193244630,7,3,Kazakhstan,2024,3,Group: Sectoral_Coverage
+17130029615042216050,7,3,Kazakhstan,2024,2,Group: Screening_Approach
+13592623629031590895,7,3,Kazakhstan,2024,2,Group: Target_Group
+13129961673167947376,7,3,Kazakhstan,2024,2,Group: Reporting_Disclosure
+35466270351773683,7,3,Kazakhstan,2024,2.6,Group: Overall_Score
+6437923757979420469,7,3,LAC,2024,4,Group: Policy_Embeddedness
+3008711639898079447,7,3,LAC,2024,4,Group: Sectoral_Coverage
+14544514435614133538,7,3,LAC,2024,1,Group: Screening_Approach
+13045998279026691231,7,3,LAC,2024,2,Group: Target_Group
+2954387610389661628,7,3,LAC,2024,2,Group: Reporting_Disclosure
+9982661637202004015,7,3,LAC,2024,2.6,Group: Overall_Score
+15633287189981447480,7,3,Malaysia,2024,4,Group: Policy_Embeddedness
+4126328697937547163,7,3,Malaysia,2024,3,Group: Sectoral_Coverage
+9573155217791077908,7,3,Malaysia,2024,1,Group: Screening_Approach
+12880671098224985653,7,3,Malaysia,2024,2,Group: Target_Group
+3520400289941571404,7,3,Malaysia,2024,2,Group: Reporting_Disclosure
+10174533924989256807,7,3,Malaysia,2024,2.4,Group: Overall_Score
+5375021858051015617,7,3,Mexico,2024,4,Group: Policy_Embeddedness
+4211651814519555929,7,3,Mexico,2024,3,Group: Sectoral_Coverage
+9171995253742389930,7,3,Mexico,2024,3,Group: Screening_Approach
+8663631234848999728,7,3,Mexico,2024,2,Group: Target_Group
+9116585170608081210,7,3,Mexico,2024,2,Group: Reporting_Disclosure
+2043769503305058107,7,3,Mexico,2024,2.8,Group: Overall_Score
+7728883097157980126,7,3,Mongolia,2024,4,Group: Policy_Embeddedness
+12753745017602330125,7,3,Mongolia,2024,4,Group: Sectoral_Coverage
+17825215312266152490,7,3,Mongolia,2024,2,Group: Screening_Approach
+5380946721218711138,7,3,Mongolia,2024,2,Group: Target_Group
+10139988270948567780,7,3,Mongolia,2024,1,Group: Reporting_Disclosure
+7733986621932981796,7,3,Mongolia,2024,2.6,Group: Overall_Score
+957848731194641900,7,3,Philippines,2024,4,Group: Policy_Embeddedness
+1790713145250759642,7,3,Philippines,2024,4,Group: Sectoral_Coverage
+1270209127359070854,7,3,Philippines,2024,2,Group: Screening_Approach
+13321459011175858226,7,3,Philippines,2024,2,Group: Target_Group
+16226013399776970016,7,3,Philippines,2024,2,Group: Reporting_Disclosure
+8166684328457358110,7,3,Philippines,2024,2.8,Group: Overall_Score
+1282687300812949738,7,3,Russia,2024,3,Group: Policy_Embeddedness
+12383772950651422111,7,3,Russia,2024,3,Group: Sectoral_Coverage
+948278649484756022,7,3,Russia,2024,2,Group: Screening_Approach
+10002414289560289403,7,3,Russia,2024,2,Group: Target_Group
+11141151765647151100,7,3,Russia,2024,2,Group: Reporting_Disclosure
+10170341156914154432,7,3,Russia,2024,2.4,Group: Overall_Score
+16645536978192778207,7,3,Rwanda,2024,3,Group: Policy_Embeddedness
+17899118073123520615,7,3,Rwanda,2024,3,Group: Sectoral_Coverage
+2378561626714492753,7,3,Rwanda,2024,3,Group: Screening_Approach
+6015838110545889767,7,3,Rwanda,2024,2,Group: Target_Group
+12291222338856109464,7,3,Rwanda,2024,2,Group: Reporting_Disclosure
+7099380126410753353,7,3,Rwanda,2024,2.6,Group: Overall_Score
+3271603454072999255,7,3,Singapore,2024,4,Group: Policy_Embeddedness
+4475389395769770700,7,3,Singapore,2024,4,Group: Sectoral_Coverage
+5151607806795204653,7,3,Singapore,2024,4,Group: Screening_Approach
+6243386801410294076,7,3,Singapore,2024,2,Group: Target_Group
+12846510272725861170,7,3,Singapore,2024,2,Group: Reporting_Disclosure
+6775951729900865776,7,3,Singapore,2024,3.2,Group: Overall_Score
+3944000990649075994,7,3,South Africa,2024,3,Group: Policy_Embeddedness
+8011929347021030495,7,3,South Africa,2024,2,Group: Sectoral_Coverage
+9339985755384204126,7,3,South Africa,2024,2,Group: Screening_Approach
+15439929163067181143,7,3,South Africa,2024,2,Group: Target_Group
+18081726543246477701,7,3,South Africa,2024,2,Group: Reporting_Disclosure
+459609824921143885,7,3,South Africa,2024,2.2,Group: Overall_Score
+7806667835882488273,7,3,South Korea,2024,4,Group: Policy_Embeddedness
+16040357946910656323,7,3,South Korea,2024,4,Group: Sectoral_Coverage
+12983994113271811582,7,3,South Korea,2024,3,Group: Screening_Approach
+12111877592991221630,7,3,South Korea,2024,2,Group: Target_Group
+16474866357769817545,7,3,South Korea,2024,2,Group: Reporting_Disclosure
+7153737542443223438,7,3,South Korea,2024,3,Group: Overall_Score
+7797626177126285395,7,3,Sri Lanka,2024,4,Group: Policy_Embeddedness
+7499981830892700920,7,3,Sri Lanka,2024,3,Group: Sectoral_Coverage
+10418799720722616006,7,3,Sri Lanka,2024,4,Group: Screening_Approach
+2234270474995189286,7,3,Sri Lanka,2024,2,Group: Target_Group
+14604500398270139429,7,3,Sri Lanka,2024,2,Group: Reporting_Disclosure
+17873195633610082697,7,3,Sri Lanka,2024,3,Group: Overall_Score
+2308754890443958,7,3,Thailand,2024,4,Group: Policy_Embeddedness
+9634064248178754555,7,3,Thailand,2024,2,Group: Sectoral_Coverage
+2300955168482281766,7,3,Thailand,2024,4,Group: Screening_Approach
+561388310843903310,7,3,Thailand,2024,2,Group: Target_Group
+14938274917277323235,7,3,Thailand,2024,2,Group: Reporting_Disclosure
+4753667238893666405,7,3,Thailand,2024,2.8,Group: Overall_Score
+10557097299648923984,7,3,Uzbekistan,2024,2,Group: Policy_Embeddedness
+9956322579694045017,7,3,Uzbekistan,2024,2,Group: Sectoral_Coverage
+7863671200745472720,7,3,Uzbekistan,2024,2,Group: Screening_Approach
+10455280610815198758,7,3,Uzbekistan,2024,3,Group: Target_Group
+766231510526347370,7,3,Uzbekistan,2024,1,Group: Reporting_Disclosure
+16659775184208807933,7,3,Uzbekistan,2024,2,Group: Overall_Score
+9165386221384911054,7,3,Vietnam,2024,3,Group: Policy_Embeddedness
+11643243962782207152,7,3,Vietnam,2024,3,Group: Sectoral_Coverage
+6756913854947738184,7,3,Vietnam,2024,3,Group: Screening_Approach
+11108436827395932438,7,3,Vietnam,2024,3,Group: Target_Group
+18111656954844827402,7,3,Vietnam,2024,2,Group: Reporting_Disclosure
+349498885282350445,7,3,Vietnam,2024,2.8,Group: Overall_Score
+6497876346011928845,7,3,Average,2024,3.7,Group: Policy_Embeddedness
+6709074656159616825,7,3,Average,2024,3.2,Group: Sectoral_Coverage
+10470320864439062022,7,3,Average,2024,2.7,Group: Screening_Approach
+1545080457745023232,7,3,Average,2024,2.2,Group: Target_Group
+5547490226816434257,7,3,Average,2024,2,Group: Reporting_Disclosure
+11407701671044334233,7,3,Average,2024,2.8,Group: Overall_Score
+15616745656203560257,8,3,ASEAN,2024,96,Group: Percent_Total_Emissions_Covered
+14032437780737376342,8,3,Bangladesh,2024,82,Group: Percent_Total_Emissions_Covered
+1421292320752812036,8,3,Brazil,2024,100,Group: Percent_Total_Emissions_Covered
+15641235468273402339,8,3,China,2024,100,Group: Percent_Total_Emissions_Covered
+7186044666764413550,8,3,EU,2024,99,Group: Percent_Total_Emissions_Covered
+17292750032587604841,8,3,Georgia,2024,76,Group: Percent_Total_Emissions_Covered
+895219734954984000,8,3,Hong Kong,2024,25,Group: Percent_Total_Emissions_Covered
+8838833308045494200,8,3,Indonesia,2024,83,Group: Percent_Total_Emissions_Covered
+6753174124116394778,8,3,Israel,2024,86,Group: Percent_Total_Emissions_Covered
+12927486027171709755,8,3,Japan,2024,52,Group: Percent_Total_Emissions_Covered
+12337688241216110828,8,3,Kazakhstan,2024,57,Group: Percent_Total_Emissions_Covered
+232544699959756948,8,3,Columbia,2024,98,Group: Percent_Total_Emissions_Covered
+10559276163520282631,8,3,LAC,2024,100,Group: Percent_Total_Emissions_Covered
+13335965010342595948,8,3,Malaysia,2024,54,Group: Percent_Total_Emissions_Covered
+580124647507183869,8,3,Mexico,2024,36,Group: Percent_Total_Emissions_Covered
+8403520588822629757,8,3,Mongolia,2024,91,Group: Percent_Total_Emissions_Covered
+9851664184777853965,8,3,Philippines,2024,100,Group: Percent_Total_Emissions_Covered
+3613944456648280957,8,3,Rwanda,2024,78,Group: Percent_Total_Emissions_Covered
+10544254277729601926,8,3,Russia,2024,66,Group: Percent_Total_Emissions_Covered
+16263231768847601161,8,3,Singapore,2024,95,Group: Percent_Total_Emissions_Covered
+6775306861092094386,8,3,Sri Lanka,2024,40,Group: Percent_Total_Emissions_Covered
+9598267604625805139,8,3,South Africa,2024,43,Group: Percent_Total_Emissions_Covered
+16836550799017724451,8,3,South Korea,2024,100,Group: Percent_Total_Emissions_Covered
+14676863505618914780,8,3,Thailand,2024,47,Group: Percent_Total_Emissions_Covered
+2670233163349576463,8,3,Uzbekistan,2024,41,Group: Percent_Total_Emissions_Covered
+14090795293339962470,8,3,Vietnam,2024,72,Group: Percent_Total_Emissions_Covered
+12347089245222162407,9,4,2006,2024,100,Group: Men_DAX40
+8882569610557080074,9,4,2006,2024,100,Group: Men_Top200
+10421001340814574768,9,4,2006,2024,100,Group: Men_Gov_Owned
+12841238875640646015,9,4,2006,2024,0,Group: Women_DAX40
+15895163313927440607,9,4,2006,2024,0,Group: Women_Top200
+1886041188800415015,9,4,2006,2024,0,Group: Women_Gov_Owned
+12625715303653852444,9,4,2008,2024,99,Group: Men_DAX40
+17639107446489367046,9,4,2008,2024,99,Group: Men_Top200
+16882683632534110730,9,4,2008,2024,95,Group: Men_Gov_Owned
+232841778412536906,9,4,2008,2024,1,Group: Women_DAX40
+16230394898210836200,9,4,2008,2024,1,Group: Women_Top200
+7071161990166039000,9,4,2008,2024,5,Group: Women_Gov_Owned
+7176177289637088579,9,4,2010,2024,97,Group: Men_DAX40
+10380490081985579774,9,4,2010,2024,98,Group: Men_Top200
+475327210466331519,9,4,2010,2024,92,Group: Men_Gov_Owned
+10351820081576100918,9,4,2010,2024,3,Group: Women_DAX40
+17140606900642793602,9,4,2010,2024,2,Group: Women_Top200
+16901032567332030296,9,4,2010,2024,8,Group: Women_Gov_Owned
+6700313687409247637,9,4,2012,2024,95,Group: Men_DAX40
+5558664254559438100,9,4,2012,2024,96,Group: Men_Top200
+17969849972076528088,9,4,2012,2024,88,Group: Men_Gov_Owned
+5113617776260696342,9,4,2012,2024,5,Group: Women_DAX40
+12792558443811652879,9,4,2012,2024,4,Group: Women_Top200
+3003140112986161456,9,4,2012,2024,12,Group: Women_Gov_Owned
+4604891450006457056,9,4,2014,2024,88,Group: Men_DAX40
+3286678295885991477,9,4,2014,2024,90,Group: Men_Top200
+8143317130882204909,9,4,2014,2024,85,Group: Men_Gov_Owned
+9539783388279688813,9,4,2014,2024,12,Group: Women_DAX40
+14922627310958495581,9,4,2014,2024,10,Group: Women_Top200
+15623440162911112140,9,4,2014,2024,15,Group: Women_Gov_Owned
+5688555302758007308,9,4,2016,2024,85,Group: Men_DAX40
+11084418426953420718,9,4,2016,2024,87,Group: Men_Top200
+3993345120619284146,9,4,2016,2024,82,Group: Men_Gov_Owned
+534535564765317858,9,4,2016,2024,15,Group: Women_DAX40
+2067091033995427983,9,4,2016,2024,13,Group: Women_Top200
+4553158281803220319,9,4,2016,2024,18,Group: Women_Gov_Owned
+17437692712435207840,9,4,2018,2024,82,Group: Men_DAX40
+519793530547684496,9,4,2018,2024,85,Group: Men_Top200
+17154064274040180600,9,4,2018,2024,80,Group: Men_Gov_Owned
+3901641140212155230,9,4,2018,2024,18,Group: Women_DAX40
+14836483032531355211,9,4,2018,2024,15,Group: Women_Top200
+257863850237838385,9,4,2018,2024,20,Group: Women_Gov_Owned
+14536411396440540408,9,4,2020,2024,78,Group: Men_DAX40
+17667084858810647561,9,4,2020,2024,82,Group: Men_Top200
+7244968007369968186,9,4,2020,2024,75,Group: Men_Gov_Owned
+3878746250973627310,9,4,2020,2024,22,Group: Women_DAX40
+17376461855305646984,9,4,2020,2024,18,Group: Women_Top200
+8189921859636448083,9,4,2020,2024,25,Group: Women_Gov_Owned
+5095558943458215295,9,4,2022,2024,75,Group: Men_DAX40
+15180766593500595857,9,4,2022,2024,80,Group: Men_Top200
+6074827114848733403,9,4,2022,2024,68,Group: Men_Gov_Owned
+16799346447498035307,9,4,2022,2024,25,Group: Women_DAX40
+8377070209540771812,9,4,2022,2024,20,Group: Women_Top200
+8525221521128115782,9,4,2022,2024,32,Group: Women_Gov_Owned
+16101705487765162853,10,4,2006,2024,90,Group: Men_DAX40
+16582846304656572960,10,4,2006,2024,92,Group: Men_Top200
+5450422863139982717,10,4,2006,2024,85,Group: Men_Gov_Owned
+3187262580485211707,10,4,2006,2024,10,Group: Women_DAX40
+9550832979465224694,10,4,2006,2024,8,Group: Women_Top200
+15976851810208991037,10,4,2006,2024,15,Group: Women_Gov_Owned
+11772276982685451174,10,4,2008,2024,88,Group: Men_DAX40
+6220215008445154170,10,4,2008,2024,90,Group: Men_Top200
+10598268768099188994,10,4,2008,2024,83,Group: Men_Gov_Owned
+13446014193649405597,10,4,2008,2024,12,Group: Women_DAX40
+7110151438535510104,10,4,2008,2024,10,Group: Women_Top200
+10201164125145484906,10,4,2008,2024,17,Group: Women_Gov_Owned
+1916487350524658316,10,4,2010,2024,85,Group: Men_DAX40
+8062810464841059962,10,4,2010,2024,88,Group: Men_Top200
+17171982221686359294,10,4,2010,2024,80,Group: Men_Gov_Owned
+11064652872771782004,10,4,2010,2024,15,Group: Women_DAX40
+1965131184017064951,10,4,2010,2024,12,Group: Women_Top200
+10331945127462324087,10,4,2010,2024,20,Group: Women_Gov_Owned
+15800364711893811255,10,4,2012,2024,82,Group: Men_DAX40
+4101652660567361703,10,4,2012,2024,85,Group: Men_Top200
+13976346596997021714,10,4,2012,2024,78,Group: Men_Gov_Owned
+5861806516758072885,10,4,2012,2024,18,Group: Women_DAX40
+12852441205491518525,10,4,2012,2024,15,Group: Women_Top200
+17499379316268353406,10,4,2012,2024,22,Group: Women_Gov_Owned
+8857489126552192408,10,4,2014,2024,78,Group: Men_DAX40
+14474886860665604603,10,4,2014,2024,82,Group: Men_Top200
+10417130018777943319,10,4,2014,2024,75,Group: Men_Gov_Owned
+8162446236385036893,10,4,2014,2024,22,Group: Women_DAX40
+6328192677528749258,10,4,2014,2024,18,Group: Women_Top200
+4930169070412645794,10,4,2014,2024,25,Group: Women_Gov_Owned
+5423729875214483747,10,4,2016,2024,75,Group: Men_DAX40
+13538602571393550089,10,4,2016,2024,78,Group: Men_Top200
+12384704956192476087,10,4,2016,2024,72,Group: Men_Gov_Owned
+16523191619971665265,10,4,2016,2024,25,Group: Women_DAX40
+219853107691341160,10,4,2016,2024,22,Group: Women_Top200
+9076252249648940307,10,4,2016,2024,28,Group: Women_Gov_Owned
+3106414350469514724,10,4,2018,2024,72,Group: Men_DAX40
+15617247312319496377,10,4,2018,2024,75,Group: Men_Top200
+7581930241335053925,10,4,2018,2024,68,Group: Men_Gov_Owned
+14663001854639294034,10,4,2018,2024,28,Group: Women_DAX40
+13748895080038221541,10,4,2018,2024,25,Group: Women_Top200
+4561999002575849961,10,4,2018,2024,32,Group: Women_Gov_Owned
+6832989084758393437,10,4,2020,2024,70,Group: Men_DAX40
+4982347370825795642,10,4,2020,2024,72,Group: Men_Top200
+5119898486357966978,10,4,2020,2024,65,Group: Men_Gov_Owned
+6495835372881002867,10,4,2020,2024,30,Group: Women_DAX40
+2340697934351122921,10,4,2020,2024,28,Group: Women_Top200
+6478076519024182770,10,4,2020,2024,35,Group: Women_Gov_Owned
+16795772483494104248,10,4,2022,2024,65,Group: Men_DAX40
+11896179955800820437,10,4,2022,2024,68,Group: Men_Top200
+12084751120010202750,10,4,2022,2024,62,Group: Men_Gov_Owned
+13916923795448417237,10,4,2022,2024,35,Group: Women_DAX40
+5121388668632843929,10,4,2022,2024,32,Group: Women_Top200
+16407432266339664342,10,4,2022,2024,38,Group: Women_Gov_Owned
+17009611505129179436,11,4,2012,2024,18,Group: Germany_Supervisory_Function
+13686660331401396374,11,4,2012,2024,18,Group: EU_Supervisory_Function
+4111217319388532568,11,4,2012,2024,7,Group: Germany_Executive_Function
+1499376884569885231,11,4,2012,2024,11,Group: EU_Executive_Function
+15402312786486379774,11,4,2013,2024,21,Group: Germany_Supervisory_Function
+12646823155622036330,11,4,2013,2024,20,Group: EU_Supervisory_Function
+1122535394796651119,11,4,2013,2024,7,Group: Germany_Executive_Function
+5568198564962910347,11,4,2013,2024,12,Group: EU_Executive_Function
+7015790290849907201,11,4,2014,2024,25,Group: Germany_Supervisory_Function
+8782535494393874093,11,4,2014,2024,22,Group: EU_Supervisory_Function
+17255877965483229326,11,4,2014,2024,8,Group: Germany_Executive_Function
+14325284641511523897,11,4,2014,2024,13,Group: EU_Executive_Function
+17570904843125804724,11,4,2015,2024,28,Group: Germany_Supervisory_Function
+12660281338803602183,11,4,2015,2024,25,Group: EU_Supervisory_Function
+11945994099179276573,11,4,2015,2024,9,Group: Germany_Executive_Function
+3292126071963404663,11,4,2015,2024,15,Group: EU_Executive_Function
+1782001642771926009,11,4,2016,2024,30,Group: Germany_Supervisory_Function
+7844229200126298777,11,4,2016,2024,27,Group: EU_Supervisory_Function
+1395496877784843885,11,4,2016,2024,10,Group: Germany_Executive_Function
+11758991743744951869,11,4,2016,2024,17,Group: EU_Executive_Function
+18065140476347961306,11,4,2017,2024,32,Group: Germany_Supervisory_Function
+13285708249643696474,11,4,2017,2024,30,Group: EU_Supervisory_Function
+10634897865258779732,11,4,2017,2024,12,Group: Germany_Executive_Function
+13059143894096497747,11,4,2017,2024,18,Group: EU_Executive_Function
+6755193872672116594,11,4,2018,2024,34,Group: Germany_Supervisory_Function
+2341704947508137721,11,4,2018,2024,32,Group: EU_Supervisory_Function
+789207518078323884,11,4,2018,2024,14,Group: Germany_Executive_Function
+9221231811736977636,11,4,2018,2024,19,Group: EU_Executive_Function
+10782234374903778668,11,4,2019,2024,35,Group: Germany_Supervisory_Function
+4367898873289524488,11,4,2019,2024,34,Group: EU_Supervisory_Function
+3391273695227170384,11,4,2019,2024,15,Group: Germany_Executive_Function
+6399989685590770374,11,4,2019,2024,20,Group: EU_Executive_Function
+12427373547284811468,11,4,2020,2024,36,Group: Germany_Supervisory_Function
+6536305131324524593,11,4,2020,2024,35,Group: EU_Supervisory_Function
+6720813129585083448,11,4,2020,2024,14,Group: Germany_Executive_Function
+9222107260410220114,11,4,2020,2024,21,Group: EU_Executive_Function
+14338597775892497659,11,4,2021,2024,36,Group: Germany_Supervisory_Function
+14713668648634698702,11,4,2021,2024,36,Group: EU_Supervisory_Function
+201654306595882990,11,4,2021,2024,15,Group: Germany_Executive_Function
+2385338137499225168,11,4,2021,2024,22,Group: EU_Executive_Function
+15788523445944666772,11,4,2022,2024,37,Group: Germany_Supervisory_Function
+11786411944004634433,11,4,2022,2024,37,Group: EU_Supervisory_Function
+7460280612731896478,11,4,2022,2024,22,Group: Germany_Executive_Function
+12218759189203142007,11,4,2022,2024,23,Group: EU_Executive_Function
+3643155441927405656,11,4,2023,2024,38,Group: Germany_Supervisory_Function
+10796765192898429041,11,4,2023,2024,38,Group: EU_Supervisory_Function
+9379257454780433148,11,4,2023,2024,23,Group: Germany_Executive_Function
+8370521338209125468,11,4,2023,2024,24,Group: EU_Executive_Function
+4553485090564687262,12,4,2013,2024,16,Group: Companies_With_Gender_Quota
+7043577351825147817,12,4,2013,2024,15,Group: Companies_Without_Gender_Quota
+18073136551541753593,12,4,2014,2024,19,Group: Companies_With_Gender_Quota
+7545811635369166447,12,4,2014,2024,16,Group: Companies_Without_Gender_Quota
+3397607745425262485,12,4,2015,2024,23,Group: Companies_With_Gender_Quota
+8595626927255013797,12,4,2015,2024,17,Group: Companies_Without_Gender_Quota
+16847940343193946648,12,4,2016,2024,28,Group: Companies_With_Gender_Quota
+2637888305725392921,12,4,2016,2024,19,Group: Companies_Without_Gender_Quota
+7185292560441822799,12,4,2017,2024,30,Group: Companies_With_Gender_Quota
+6699961956292640839,12,4,2017,2024,22,Group: Companies_Without_Gender_Quota
+9900259426845345325,12,4,2018,2024,32,Group: Companies_With_Gender_Quota
+17629764705102154803,12,4,2018,2024,23,Group: Companies_Without_Gender_Quota
+1076402497133299053,12,4,2019,2024,34,Group: Companies_With_Gender_Quota
+16539235941129930423,12,4,2019,2024,24,Group: Companies_Without_Gender_Quota
+11058067456595609457,12,4,2020,2024,35,Group: Companies_With_Gender_Quota
+14042483749880283741,12,4,2020,2024,25,Group: Companies_Without_Gender_Quota
+10028615174576293735,12,4,2021,2024,35,Group: Companies_With_Gender_Quota
+1065693581205521490,12,4,2021,2024,27,Group: Companies_Without_Gender_Quota
+16538909492611206277,12,4,2022,2024,36,Group: Companies_With_Gender_Quota
+3208783674747865012,12,4,2022,2024,26,Group: Companies_Without_Gender_Quota
+8082261048872354398,12,4,2023,2024,37,Group: Companies_With_Gender_Quota
+1266504863592695629,12,4,2023,2024,27,Group: Companies_Without_Gender_Quota
+15988249809751264833,13,4,2017,2024,11,Group: Companies_With_Inclusion_Requirement
+3602840577090473507,13,4,2017,2024,8,Group: Companies_Without_Inclusion_Requirement
+12156403187658477531,13,4,2018,2024,12,Group: Companies_With_Inclusion_Requirement
+11217260448950407140,13,4,2018,2024,9,Group: Companies_Without_Inclusion_Requirement
+15412965595719746582,13,4,2019,2024,13,Group: Companies_With_Inclusion_Requirement
+8043436167069977798,13,4,2019,2024,10,Group: Companies_Without_Inclusion_Requirement
+914705198538901216,13,4,2020,2024,14,Group: Companies_With_Inclusion_Requirement
+9055759580773305979,13,4,2020,2024,11,Group: Companies_Without_Inclusion_Requirement
+5622583788891752855,13,4,2021,2024,18,Group: Companies_With_Inclusion_Requirement
+5930617098150955681,13,4,2021,2024,13,Group: Companies_Without_Inclusion_Requirement
+14880851506745854295,13,4,2022,2024,20,Group: Companies_With_Inclusion_Requirement
+4938354582411626641,13,4,2022,2024,15,Group: Companies_Without_Inclusion_Requirement
+12116036617982463918,13,4,2023,2024,22,Group: Companies_With_Inclusion_Requirement
+523448284802467435,13,4,2023,2024,17,Group: Companies_Without_Inclusion_Requirement
+5983810367540711263,14,4,0,2024,30,Group: Year_2021
+15687011633603759698,14,4,0,2024,22,Group: Year_2022
+8298973984842598777,14,4,0,2024,9,Group: Year_2023
+5699557629305310936,14,4,1,2024,58,Group: Year_2021
+1847127192027089285,14,4,1,2024,57,Group: Year_2022
+15094824045140788736,14,4,1,2024,68,Group: Year_2023
+11581485847879830623,14,4,2,2024,12,Group: Year_2021
+10191771039973920297,14,4,2,2024,15,Group: Year_2022
+8433366801612230053,14,4,2,2024,17,Group: Year_2023
+2740015598087587516,14,4,3,2024,0,Group: Year_2021
+4920842239090377560,14,4,3,2024,6,Group: Year_2022
+7524530969400856308,14,4,3,2024,6,Group: Year_2023
+8719337429883569231,14,4,4,2024,0,Group: Year_2021
+8931973418457189157,14,4,4,2024,0,Group: Year_2022
+2316175418157189001,14,4,4,2024,0,Group: Year_2023
+16468375705195528529,14,4,5,2024,0,Group: Year_2021
+6011290764720754019,14,4,5,2024,0,Group: Year_2022
+6004953839503427270,14,4,5,2024,0,Group: Year_2023
+12311724797168208282,14,4,6,2024,0,Group: Year_2021
+5899005091268480508,14,4,6,2024,0,Group: Year_2022
+8604742214280890267,14,4,6,2024,0,Group: Year_2023
+6924941670335465679,15,4,0,2024,48,Group: Year_2021
+9798905059326836984,15,4,0,2024,46,Group: Year_2022
+10627403457306643874,15,4,0,2024,44,Group: Year_2023
+16176013676538841855,15,4,1,2024,39,Group: Year_2021
+17807999241515650684,15,4,1,2024,40,Group: Year_2022
+10490400619489872441,15,4,1,2024,40,Group: Year_2023
+14753312466630427953,15,4,2,2024,9,Group: Year_2021
+6337242711355116066,15,4,2,2024,10,Group: Year_2022
+143493571669411427,15,4,2,2024,11,Group: Year_2023
+8559958168652630499,15,4,3,2024,3,Group: Year_2021
+690278890184854742,15,4,3,2024,3,Group: Year_2022
+5818829978983220347,15,4,3,2024,4,Group: Year_2023
+8514577114945441540,15,4,4,2024,1,Group: Year_2021
+12458735841712884506,15,4,4,2024,1,Group: Year_2022
+6285837817311808225,15,4,4,2024,1,Group: Year_2023
+14193338430389962124,15,4,5,2024,0,Group: Year_2021
+3971085252975347783,15,4,5,2024,0,Group: Year_2022
+14518870310398150002,15,4,5,2024,0,Group: Year_2023
+894051938207089545,15,4,6,2024,0,Group: Year_2021
+2786142773250441879,15,4,6,2024,0,Group: Year_2022
+16769500813264701660,15,4,6,2024,0,Group: Year_2023

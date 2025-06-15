@@ -79,3 +79,45 @@ export const data = {
     },
   },
 };
+
+// Template for future domains - easy to add!
+// {
+//   id: "health",
+//   name: "Health & Healthcare",
+//   description:
+//     "Public health trends, healthcare policy, and medical innovations",
+//   icon: "Heart",
+//   color: "green",
+//   gradient: "from-green-500 to-emerald-500",
+//   totalStories: 0,
+//   totalReadTime: 0,
+//   stories: [
+//     // Add health stories here in the future
+//   ],
+// },
+// {
+//   id: "finance",
+//   name: "Finance & Markets",
+//   description: "Financial markets, banking, and investment trends",
+//   icon: "DollarSign",
+//   color: "yellow",
+//   gradient: "from-yellow-500 to-orange-500",
+//   totalStories: 0,
+//   totalReadTime: 0,
+//   stories: [
+//     // Add finance stories here in the future
+//   ],
+// },
+// {
+//   id: "transport",
+//   name: "Transportation",
+//   description: "Mobility trends, infrastructure, and sustainable transport",
+//   icon: "Truck",
+//   color: "indigo",
+//   gradient: "from-indigo-500 to-blue-500",
+//   totalStories: 0,
+//   totalReadTime: 0,
+//   stories: [
+//     // Add transport stories here in the future
+//   ],
+// },

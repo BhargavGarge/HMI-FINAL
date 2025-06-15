@@ -14,6 +14,7 @@ import {
   BarChart3,
   MessageSquare,
   Headphones,
+  BookOpen,
 } from "lucide-react";
 import {
   Select,
@@ -24,13 +25,14 @@ import {
 } from "@/components/ui/select";
 import load from "../styles/load.gif";
 import { TrendCard } from "@/components/trend-card";
-import { ChatBox } from "@/components/chat-box";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { D3Visualization } from "@/components/d3-visualization";
+import { StoryGenerator } from "@/components/story-generator";
+import { StoryTemplates } from "@/components/story-template";
+import { ChatBox } from "@/components/chat-box";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -281,7 +283,10 @@ export default function Home() {
 
       <div className="container mx-auto px-4 py-8">
         <Tabs defaultValue="trends" className="mb-8">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList
+            className="grid w-full grid-cols-3  
+           mb-8"
+          >
             <TabsTrigger
               value="trends"
               className="flex items-center justify-center"
@@ -295,6 +300,13 @@ export default function Home() {
             >
               <MessageSquare className="h-4 w-4 mr-2" />
               Ask AI Assistant
+            </TabsTrigger>
+            <TabsTrigger
+              value="stories"
+              className="flex items-center justify-center"
+            >
+              <BookOpen className="h-4 w-4 mr-2" />
+              Data Stories
             </TabsTrigger>
           </TabsList>
 
@@ -401,6 +413,36 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-xl shadow border border-gray-100 overflow-hidden">
                 <ChatBox indicator={indicator} />
+              </div>
+            </section>
+          </TabsContent>
+
+          <TabsContent value="stories" className="space-y-8">
+            {/* Stories Section */}
+            <section>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                  Data Stories
+                </h2>
+                {indicator !== "all" && (
+                  <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    Context: {getIndicatorTitle(indicator)}
+                  </div>
+                )}
+              </div>
+              <div className="bg-white rounded-xl shadow border border-gray-100 overflow-hidden">
+                <div className="p-6">
+                  <StoryTemplates
+                    onSelectTemplate={(template) =>
+                      console.log("Selected template:", template)
+                    }
+                  />
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow border border-gray-100 overflow-hidden mt-6">
+                <div className="p-6">
+                  <StoryGenerator indicator={indicator} />
+                </div>
               </div>
             </section>
           </TabsContent>
@@ -544,7 +586,7 @@ export default function Home() {
           )}
         </section>
       </div>
-      <D3Visualization indicator={indicator} />
+
       {/* Footer */}
       <footer className="bg-gray-50 border-t border-gray-200 mt-16 py-8">
         <div className="container mx-auto px-4">
