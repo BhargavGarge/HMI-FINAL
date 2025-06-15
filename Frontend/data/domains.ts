@@ -13,6 +13,7 @@ export const domains: Domain[] = [
     stories: [
       {
         id: "inflation-growth-trap",
+        domainId: "macroeconomics",
         title: "The Inflation-Growth Trap",
         subtitle:
           "How Germany's Economy Is Stalling in a New Era of Persistent Price Pressures",
@@ -22,6 +23,87 @@ export const domains: Domain[] = [
         readTime: 12,
         difficulty: "Advanced",
         lastUpdated: "2024-01-15",
+        data: {
+          // Section 0: Recovery data
+          section_0: {
+            gdp_growth_historical: {
+              period: ["2010s Avg", "2023", "2024 Forecast"],
+              growth_rate: [1.5, 0.2, 0.1],
+            },
+            energy_cost_impact: {
+              year: ["2021", "2023"],
+              industrial_energy_cost: [100, 134],
+            },
+          },
+          // Section 1: Inflation data
+          section_1: {
+            inflation_timeline: {
+              year: ["2021", "2022", "2023", "2024"],
+              cpi_inflation: [2.8, 8.7, 3.9, 2.4],
+              real_wages: [100, 95, 92, 94],
+            },
+            consumer_sentiment: {
+              date: ["Jan 2022", "May 2024"],
+              gfk_index: [-5.2, -24.2],
+            },
+          },
+          // Section 2: Investment collapse
+          section_2: {
+            investment_decline: {
+              sector: [
+                "Business Investment",
+                "Construction Output",
+                "Building Permits",
+              ],
+              yoy_change: [-1.8, -7.4, -12.5],
+            },
+            mittelstand_impact: {
+              factor: [
+                "Regulatory Uncertainty",
+                "Input Price Volatility",
+                "China Trade Risk",
+              ],
+              impact_score: [8.2, 7.8, 8.9],
+            },
+          },
+          // Section 3: Policy constraints
+          section_3: {
+            ecb_policy: {
+              period: ["2022 Q1", "2022 Q4", "2023 Q4"],
+              interest_rate: [0.0, 2.5, 4.5],
+              investment_impact: [0, -2.1, -3.8],
+            },
+            public_investment: {
+              country: ["Germany", "EU Average", "Nordic Average"],
+              gdp_percentage: [2.4, 3.1, 3.8],
+            },
+          },
+          // Section 4: The trap
+          section_4: {
+            economic_cycle: {
+              factor: [
+                "Weak Demand",
+                "High Prices",
+                "Low Investment",
+                "Fiscal Constraints",
+              ],
+              severity: [8.5, 7.2, 8.1, 9.0],
+            },
+          },
+          // Section 5: Solutions
+          section_5: {
+            policy_solutions: {
+              solution: [
+                "Fiscal Expansion",
+                "Supply Chain Resilience",
+                "Human Capital",
+                "Policy Coordination",
+              ],
+              urgency: [9.2, 8.7, 8.9, 8.4],
+              feasibility: [6.1, 7.3, 7.8, 5.9],
+            },
+          },
+        },
         sections: [
           {
             heading: "I. The Fragile Recovery That Never Came",
@@ -58,6 +140,7 @@ export const domains: Domain[] = [
       },
       {
         id: "global-decoupling",
+        domainId: "macroeconomics",
         title: "Decoupling and the End of the Global Playbook",
         subtitle:
           "How Germany's Export-Led Growth Model Is Being Rewritten by Fragmentation, Friction, and Geopolitics",
@@ -67,6 +150,60 @@ export const domains: Domain[] = [
         readTime: 10,
         difficulty: "Intermediate",
         lastUpdated: "2024-01-10",
+        data: {
+          section_0: {
+            trade_dependence: {
+              year: ["2019", "2022", "2023"],
+              exports_gdp: [47.4, 46.8, 45.1],
+              china_trade: [220, 245, 220],
+            },
+          },
+          section_1: {
+            supply_chain_shift: {
+              trend: ["Reshoring", "Friend-shoring", "Strategic Materials"],
+              adoption_rate: [35, 42, 67],
+            },
+            export_performance: {
+              quarter: ["Q1 2023", "Q2 2023", "Q3 2023", "Q1 2024"],
+              volume_change: [-1.2, -2.1, -2.8, -3.3],
+            },
+          },
+          section_2: {
+            industrial_pressure: {
+              sector: ["Machinery", "Chemicals", "Automotive"],
+              production_change: [-2.5, -1.8, -3.2],
+              export_orders_asia: [-18, -12, -15],
+            },
+          },
+          section_3: {
+            institutional_weakness: {
+              institution: [
+                "WTO Effectiveness",
+                "Trade Predictability",
+                "Global Coordination",
+              ],
+              strength_score: [3.2, 4.1, 3.8],
+            },
+          },
+          section_4: {
+            china_exposure: {
+              company: ["Volkswagen", "BMW", "BASF"],
+              china_revenue_share: [38, 35, 42],
+              risk_level: [8.5, 8.2, 9.1],
+            },
+          },
+          section_5: {
+            rebalancing_needs: {
+              area: [
+                "Domestic Demand",
+                "EU Coordination",
+                "Innovation Investment",
+              ],
+              current_level: [4.2, 5.8, 6.1],
+              required_level: [7.5, 8.2, 8.8],
+            },
+          },
+        },
         sections: [
           {
             heading: "I. A Nation Built on Trade — And a Dependence on China",
@@ -107,6 +244,7 @@ export const domains: Domain[] = [
       },
       {
         id: "silent-slowdown",
+        domainId: "macroeconomics",
         title: "Built-in Fragilities: Germany's Silent Slowdown",
         subtitle:
           "Why the Engine of Europe Is Slowing Not with a Bang, But a Persistent Whisper",
@@ -116,6 +254,52 @@ export const domains: Domain[] = [
         readTime: 11,
         difficulty: "Advanced",
         lastUpdated: "2024-01-08",
+        data: {
+          section_0: {
+            productivity_comparison: {
+              country: ["Germany", "US", "South Korea"],
+              productivity_growth: [0.8, 1.2, 2.1],
+              recent_trend: [-0.3, 0.4, 1.8],
+            },
+          },
+          section_1: {
+            investment_gap: {
+              category: [
+                "Public Investment",
+                "Digital Infrastructure",
+                "Energy Grid",
+              ],
+              current_spending: [2.4, 1.8, 1.2],
+              needed_spending: [3.5, 2.8, 2.1],
+              gap_billions: [159, 85, 45],
+            },
+          },
+          section_2: {
+            demographic_challenge: {
+              metric: ["Median Age", "Over 65 %", "Workforce Decline"],
+              current_value: [45.7, 21, -0.8],
+              projected_2030: [47.2, 24, -1.2],
+            },
+          },
+          section_3: {
+            innovation_paradox: {
+              indicator: [
+                "R&D Spending %",
+                "Startup Success",
+                "Global Patents",
+              ],
+              germany_score: [3.1, 4.2, 7.8],
+              benchmark_score: [3.5, 7.1, 8.2],
+            },
+          },
+          section_4: {
+            economic_indicators: {
+              metric: ["Unemployment", "PMI", "Export Growth"],
+              current: [5.7, 47.2, -2.1],
+              historical_avg: [6.8, 52.1, 3.4],
+            },
+          },
+        },
         sections: [
           {
             heading: "I. Productivity: The Core Is Hollowing Out",
@@ -151,6 +335,7 @@ export const domains: Domain[] = [
       },
       {
         id: "growth-engine",
+        domainId: "macroeconomics",
         title: "The German Growth Engine is Misfiring",
         subtitle:
           "Traditional Economic Drivers Are Faltering in a Rapidly Changing Global Environment",
@@ -160,6 +345,56 @@ export const domains: Domain[] = [
         readTime: 12,
         difficulty: "Intermediate",
         lastUpdated: "2024-01-05",
+        data: {
+          section_0: {
+            growth_decline: {
+              period: ["2010s Average", "2023", "2024 Projection"],
+              gdp_growth: [1.6, 0.2, 0.1],
+            },
+          },
+          section_1: {
+            export_weakness: {
+              region: ["China", "US", "EU"],
+              export_change: [-10.2, -2.1, -1.8],
+              industrial_production: [-2.0, -1.2, -0.8],
+            },
+          },
+          section_2: {
+            investment_crisis: {
+              year: ["2019", "2023"],
+              capital_formation: [22.1, 20.6],
+              construction_permits: [100, 78],
+              public_investment: [2.4, 2.4],
+            },
+          },
+          section_3: {
+            consumption_weakness: {
+              indicator: [
+                "Inflation Peak",
+                "Current Inflation",
+                "Consumer Sentiment",
+              ],
+              value: [8.7, 2.4, -24.2],
+            },
+          },
+          section_4: {
+            structural_issues: {
+              challenge: ["Energy Costs", "Digital Lag", "Innovation Gap"],
+              impact_score: [8.5, 7.2, 6.8],
+              vs_competitors: [34, -18, -0.4],
+            },
+          },
+          section_5: {
+            policy_constraints: {
+              constraint: [
+                "Debt Brake",
+                "Fiscal Flexibility",
+                "Investment Capacity",
+              ],
+              severity: [9.1, 8.3, 7.9],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction: The Decline of a Powerhouse",
@@ -236,6 +471,7 @@ export const domains: Domain[] = [
     stories: [
       {
         id: "energy-affordability",
+        domainId: "Energy",
         title: "Can Germany Make Clean Energy Affordable for All?",
         subtitle:
           "How Renewable Energy Pools Could Transform Household Electricity Bills",
@@ -245,6 +481,47 @@ export const domains: Domain[] = [
         readTime: 8,
         difficulty: "Intermediate",
         lastUpdated: "2024-01-20",
+        data: {
+          section_0: {
+            energy_transition_overview: {
+              metric: ["Solar Capacity", "Wind Capacity", "Renewable Share"],
+              current: [70, 65, 50],
+              target_2030: [200, 115, 80],
+            },
+          },
+          section_1: {
+            cost_revolution: {
+              technology: ["Solar PV", "Onshore Wind", "Offshore Wind"],
+              cost_decline_2010_2022: [89, 69, 59],
+              current_lcoe: [4.5, 5.2, 7.8],
+            },
+          },
+          section_2: {
+            affordability_gap: {
+              household_type: ["Low Income", "Middle Income", "High Income"],
+              energy_burden: [12.5, 8.2, 4.1],
+              bill_volatility: [35, 28, 18],
+            },
+          },
+          section_3: {
+            re_pools_potential: {
+              benefit: ["Price Stability", "Cost Reduction", "Local Control"],
+              impact_score: [8.7, 7.2, 8.9],
+              implementation_difficulty: [6.1, 7.8, 5.4],
+            },
+          },
+          section_4: {
+            policy_requirements: {
+              reform: [
+                "Municipal PPAs",
+                "Billing Transparency",
+                "Low-Income Access",
+              ],
+              urgency: [9.1, 7.8, 9.5],
+              political_feasibility: [6.8, 8.2, 7.1],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -280,6 +557,7 @@ export const domains: Domain[] = [
       },
       {
         id: "europe-energy-independence",
+        domainId: "Energy",
         title: "Post-Russia: Europe's Secure Path to Energy Independence",
         subtitle:
           "Redesigning Supply Chains, Markets, and Infrastructure for Resilience",
@@ -289,6 +567,56 @@ export const domains: Domain[] = [
         readTime: 12,
         difficulty: "Intermediate",
         lastUpdated: "2024-02-15",
+        data: {
+          section_0: {
+            energy_transformation: {
+              metric: [
+                "Russian Gas Dependence",
+                "LNG Terminals",
+                "Storage Levels",
+              ],
+              before_2022: [40, 0, 85],
+              after_2023: [15, 3, 95],
+            },
+          },
+          section_1: {
+            import_collapse: {
+              country: ["Germany", "EU Average"],
+              russian_gas_2021: [55, 40],
+              russian_gas_2023: [2, 15],
+              replacement_sources: [85, 70],
+            },
+          },
+          section_2: {
+            infrastructure_boom: {
+              infrastructure: [
+                "LNG Terminals",
+                "Pipeline Capacity",
+                "Storage Expansion",
+              ],
+              normal_timeline_years: [5, 3, 2],
+              crisis_timeline_months: [12, 8, 6],
+            },
+          },
+          section_3: {
+            diversification_beyond_gas: {
+              technology: ["Heat Pumps", "Solar", "Wind"],
+              growth_2022_2023: [100, 25, 18],
+              market_penetration: [15, 12, 28],
+            },
+          },
+          section_4: {
+            new_security_doctrine: {
+              principle: [
+                "Resilience over Cost",
+                "Strategic Sovereignty",
+                "Emergency Coordination",
+              ],
+              priority_score: [9.2, 8.8, 8.5],
+              implementation_progress: [7.1, 6.8, 7.9],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -324,6 +652,7 @@ export const domains: Domain[] = [
       },
       {
         id: "germany-energy-transition",
+        domainId: "Energy",
         title: "Beyond the Crisis — Germany's Accelerated Energy Transition",
         subtitle:
           "How a Shock Triggered a Long-Term Shift to Renewables and Resilience",
@@ -333,6 +662,51 @@ export const domains: Domain[] = [
         readTime: 10,
         difficulty: "Intermediate",
         lastUpdated: "2024-03-10",
+        data: {
+          section_0: {
+            crisis_response: {
+              metric: [
+                "Gas Dependency",
+                "LNG Infrastructure",
+                "Energy Security",
+              ],
+              pre_crisis: [55, 0, 4.2],
+              post_crisis: [5, 3, 7.8],
+            },
+          },
+          section_1: {
+            diversification_speed: {
+              supplier: ["Russia", "US", "Qatar", "Norway"],
+              share_2021: [55, 8, 12, 15],
+              share_2023: [5, 25, 18, 22],
+            },
+          },
+          section_2: {
+            renewable_acceleration: {
+              year: ["2022", "2023", "2024"],
+              renewable_twh: [260, 289, 315],
+              solar_installations_gw: [7.2, 14.1, 16.8],
+            },
+          },
+          section_3: {
+            demand_transformation: {
+              technology: [
+                "Heat Pumps",
+                "Electric Vehicles",
+                "Industrial Efficiency",
+              ],
+              growth_rate: [52, 35, 4],
+              market_share: [18, 12, 78],
+            },
+          },
+          section_4: {
+            grid_investment: {
+              project: ["Transmission", "Storage", "Smart Grid"],
+              investment_billions: [18, 8, 12],
+              completion_timeline: [2027, 2025, 2026],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -368,6 +742,7 @@ export const domains: Domain[] = [
       },
       {
         id: "germany-80-renewables",
+        domainId: "Energy",
         title: "80% Renewables by 2030 — Ambition Meets Feasibility",
         subtitle: "Germany's Path to Clean Power Without Compromise",
         thesis:
@@ -376,6 +751,40 @@ export const domains: Domain[] = [
         readTime: 10,
         difficulty: "Intermediate",
         lastUpdated: "2024-04-05",
+        data: {
+          section_0: {
+            ambitious_targets: {
+              metric: [
+                "Current Renewables %",
+                "2030 Target %",
+                "Required Growth",
+              ],
+              value: [50, 80, 130],
+            },
+          },
+          section_1: {
+            target_breakdown: {
+              year: ["2022", "2025", "2028", "2030"],
+              target_twh: [260, 380, 500, 600],
+              solar_share: [12, 22, 28, 34],
+              wind_share: [35, 48, 55, 58],
+            },
+          },
+          section_2: {
+            crisis_resilience: {
+              test: ["Nuclear Shutdown", "Gas Crisis", "Price Volatility"],
+              system_stability: [8.2, 7.8, 7.1],
+              supply_security: [8.9, 8.1, 7.5],
+            },
+          },
+          section_3: {
+            sector_coupling: {
+              sector: ["Heating", "Transport", "Industry"],
+              electrification_rate: [25, 18, 35],
+              target_2030: [45, 35, 55],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -434,6 +843,7 @@ export const domains: Domain[] = [
     stories: [
       {
         id: "pandemic-parenting",
+        domainId: "gender-equality",
         title: "Pandemic Parenting: A Temporary Setback or a Permanent Divide?",
         subtitle:
           "COVID-19, Gender Roles, and the Persistence of Unequal Care in Germany",
@@ -443,6 +853,55 @@ export const domains: Domain[] = [
         readTime: 14,
         difficulty: "Intermediate",
         lastUpdated: "2024-02-10",
+        data: {
+          section_0: {
+            pandemic_disruption: {
+              impact: ["School Closures", "Daycare Closures", "Work from Home"],
+              duration_weeks: [12, 16, 24],
+              household_affected: [95, 88, 67],
+            },
+          },
+          section_1: {
+            role_reversion: {
+              household_type: ["Traditional Division", "Egalitarian", "Mixed"],
+              pre_pandemic: [25, 35, 40],
+              spring_2020: [50, 20, 30],
+              late_2021: [35, 28, 37],
+            },
+          },
+          section_2: {
+            care_gap_evolution: {
+              year: ["2019", "2020", "2021", "2023"],
+              women_hours: [4.1, 6.2, 5.8, 5.8],
+              men_hours: [2.3, 2.5, 2.4, 2.4],
+              gap_percent: [44, 60, 57, 57],
+            },
+          },
+          section_3: {
+            policy_response: {
+              measure: ["Emergency Leave", "Sick Days", "Childcare Support"],
+              women_uptake: [78, 85, 82],
+              men_uptake: [22, 15, 18],
+            },
+          },
+          section_4: {
+            structural_factors: {
+              factor: [
+                "Wage Gap",
+                "Flexibility Penalty",
+                "Social Expectations",
+              ],
+              influence_score: [8.2, 7.8, 9.1],
+            },
+          },
+          section_5: {
+            infrastructure_gaps: {
+              service: ["Full-day Childcare", "Holiday Care", "Emergency Care"],
+              availability: [45, 28, 15],
+              needed: [85, 70, 60],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -483,6 +942,7 @@ export const domains: Domain[] = [
       },
       {
         id: "informal-care",
+        domainId: "gender-equality",
         title: "The Silent Burden — Informal Care and Germany's Gender Gap",
         subtitle:
           "Informal Care Work, Demographic Change, and Gendered Inequality in Germany",
@@ -492,6 +952,55 @@ export const domains: Domain[] = [
         readTime: 14,
         difficulty: "Intermediate",
         lastUpdated: "2024-03-15",
+        data: {
+          section_0: {
+            care_system_overview: {
+              metric: [
+                "People Needing Care",
+                "Home Care %",
+                "Professional Care %",
+              ],
+              current_millions: [5.0, 4.15, 0.85],
+              projected_2055: [6.8, 5.44, 1.36],
+            },
+          },
+          section_1: {
+            gender_care_comparison: {
+              country: ["Germany", "Sweden", "Croatia"],
+              gender_care_gap: [133, 88, 231],
+              female_labor_participation: [73, 81, 65],
+            },
+          },
+          section_2: {
+            policy_incentives: {
+              benefit_type: [
+                "Pflegegeld (Cash)",
+                "Professional Services",
+                "Mixed",
+              ],
+              uptake_percent: [60, 25, 15],
+              female_caregiver_rate: [85, 45, 70],
+            },
+          },
+          section_3: {
+            international_comparison: {
+              country: ["Germany", "Netherlands", "Sweden"],
+              ltc_gdp_spending: [1.0, 1.5, 1.8],
+              gender_gap_score: [6.2, 7.8, 8.1],
+            },
+          },
+          section_4: {
+            economic_impact: {
+              metric: [
+                "Care Recipients 2055",
+                "Female Labor Loss",
+                "GDP Impact",
+              ],
+              value: [6.8, 1.2, -100],
+              unit: ["Million", "Million", "Billion EUR"],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",
@@ -528,6 +1037,7 @@ export const domains: Domain[] = [
       },
       {
         id: "generational-justice",
+        domainId: "gender-equality",
         title:
           "Generational Justice in Care — The Future of Women's Economic Participation",
         subtitle:
@@ -538,6 +1048,62 @@ export const domains: Domain[] = [
         readTime: 14,
         difficulty: "Intermediate",
         lastUpdated: "2024-04-20",
+        data: {
+          section_0: {
+            demographic_challenge: {
+              metric: [
+                "Care Recipients",
+                "Working Age Population",
+                "Dependency Ratio",
+              ],
+              current: [5.0, 54.2, 9.2],
+              projected_2055: [6.8, 48.1, 14.1],
+            },
+          },
+          section_1: {
+            sandwich_generation: {
+              age_group: ["40-49", "50-59", "60-65"],
+              care_burden_hours: [8.2, 12.5, 15.8],
+              labor_participation: [82, 76, 58],
+            },
+          },
+          section_2: {
+            pension_inequality: {
+              gender: ["Male", "Female"],
+              average_pension: [1800, 850],
+              care_credits: [14, 86],
+            },
+          },
+          section_3: {
+            intergenerational_costs: {
+              impact: [
+                "Current Income Loss",
+                "Future Pension Gap",
+                "Family Transfers",
+              ],
+              women_affected_millions: [2.1, 3.8, 1.9],
+              economic_cost_billions: [45, 120, 28],
+            },
+          },
+          section_4: {
+            labor_market_potential: {
+              scenario: ["Current", "10%+ Female Participation"],
+              female_participation: [73, 83],
+              gdp_impact_billions: [0, 100],
+            },
+          },
+          section_5: {
+            policy_solutions: {
+              reform: [
+                "Professional Care Expansion",
+                "Pension Reform",
+                "Tax Reform",
+              ],
+              impact_score: [8.9, 8.2, 7.8],
+              implementation_difficulty: [7.1, 8.5, 6.9],
+            },
+          },
+        },
         sections: [
           {
             heading: "Introduction",

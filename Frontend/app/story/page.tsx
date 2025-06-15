@@ -18,7 +18,7 @@ import {
 import { domains as initialDomainsData } from "@/data/domains"; // Use alias for clarity
 import { DomainCard } from "@/components/domain-card"; // Assuming this component exists
 import { StoryCard } from "@/components/story-card"; // Assuming this component exists
-import { StoryReader } from "@/components/story-reader";
+import StoryReader from "@/components/story-reader";
 import type { Domain, Story } from "@/types/story";
 
 type ViewMode = "domains" | "stories" | "reader";
