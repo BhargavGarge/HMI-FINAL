@@ -1,289 +1,110 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  LineChart,
-  Line,
-  BarChart,
   Bar,
-  PieChart,
+  BarChart,
+  Line,
+  LineChart,
   Pie,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
+  PieChart,
   Area,
   AreaChart,
-  RadialBarChart,
+  Scatter,
+  ScatterChart,
   RadialBar,
+  RadialBarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+  Cell,
+  Legend,
 } from "recharts";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 
 interface DataChartProps {
-  type: "line" | "bar" | "pie" | "area" | "radial";
+  type: "line" | "bar" | "pie" | "area" | "radial" | "scatter" | "donut";
   data: any[];
-  title?: string;
+  title: string;
+  subtitle?: string;
   height?: number;
+  unit?: string;
 }
 
-// Enhanced color palette for stunning visuals
 const COLORS = [
-  "#3B82F6", // blue-500
-  "#10B981", // emerald-500
-  "#8B5CF6", // violet-500
-  "#F59E0B", // amber-500
-  "#EF4444", // red-500
-  "#06B6D4", // cyan-500
-  "#6366F1", // indigo-500
-  "#EC4899", // pink-500
-  "#84CC16", // lime-500
-  "#F97316", // orange-500
-  "#14B8A6", // teal-500
-  "#A855F7", // purple-500
+  "#0088FE",
+  "#00C49F",
+  "#FFBB28",
+  "#FF8042",
+  "#8884D8",
+  "#82CA9D",
+  "#FFC658",
+  "#FF7C7C",
+  "#8DD1E1",
+  "#D084D0",
+  "#87D068",
+  "#FFA07A",
 ];
 
-// Gradient definitions for enhanced visuals
-const GRADIENTS = [
-  { id: "gradient1", colors: ["#3B82F6", "#1D4ED8"] },
-  { id: "gradient2", colors: ["#10B981", "#059669"] },
-  { id: "gradient3", colors: ["#8B5CF6", "#7C3AED"] },
-  { id: "gradient4", colors: ["#F59E0B", "#D97706"] },
-  { id: "gradient5", colors: ["#EF4444", "#DC2626"] },
+const GRADIENT_COLORS = [
+  { start: "#667eea", end: "#764ba2" },
+  { start: "#f093fb", end: "#f5576c" },
+  { start: "#4facfe", end: "#00f2fe" },
+  { start: "#43e97b", end: "#38f9d7" },
+  { start: "#fa709a", end: "#fee140" },
+  { start: "#a8edea", end: "#fed6e3" },
 ];
 
-export function DataChart({ type, data, title, height = 400 }: DataChartProps) {
-  const chartRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Resize observer to handle responsive charts
-    if (chartRef.current) {
-      const resizeObserver = new ResizeObserver(() => {
-        window.dispatchEvent(new Event("resize"));
-      });
-      resizeObserver.observe(chartRef.current);
-      return () => {
-        if (chartRef.current) {
-          resizeObserver.unobserve(chartRef.current);
-        }
-      };
-    }
-  }, []);
+export function DataChart({
+  type,
+  data,
+  title,
+  subtitle,
+  height = 400,
+  unit,
+}: DataChartProps) {
+  const chartConfig = {
+    value: {
+      label: "Value",
+      color: "hsl(var(--chart-1))",
+    },
+  };
 
   if (!data || data.length === 0) {
     return (
-      <Card>
-        <CardContent className="flex items-center justify-center h-[400px]">
-          <div className="text-center">
-            <div className="text-6xl mb-4">📊</div>
-            <p className="text-muted-foreground">
-              No data available for visualization
-            </p>
-            <Badge variant="outline" className="mt-2">
-              Try selecting a different time range or indicator
-            </Badge>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="flex items-center justify-center h-64 text-muted-foreground bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border-2 border-dashed">
+        <div className="text-center">
+          <div className="text-4xl mb-2">📊</div>
+          <div>No data available for visualization</div>
+        </div>
+      </div>
     );
   }
 
-  // Custom tooltip component
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-white p-4 border border-gray-200 rounded-lg shadow-lg">
-          <p className="font-semibold text-gray-900">{`${label}`}</p>
-          {payload.map((entry: any, index: number) => (
-            <p key={index} style={{ color: entry.color }} className="text-sm">
-              {`${entry.dataKey}: ${
-                typeof entry.value === "number"
-                  ? entry.value.toFixed(2)
-                  : entry.value
-              }`}
-            </p>
-          ))}
-        </div>
-      );
-    }
-    return null;
-  };
+  // Transform data for radial chart
+  const radialData = data.map((item, index) => ({
+    ...item,
+    fill: COLORS[index % COLORS.length],
+    angle: (item.value / Math.max(...data.map((d) => d.value))) * 360,
+  }));
 
-  // Custom label for pie charts
-  const renderCustomizedLabel = ({
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    percent,
-  }: any) => {
-    if (percent < 0.05) return null; // Don't show labels for slices less than 5%
-
-    const RADIAN = Math.PI / 180;
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-    return (
-      <text
-        x={x}
-        y={y}
-        fill="white"
-        textAnchor={x > cx ? "start" : "end"}
-        dominantBaseline="central"
-        fontSize="12"
-      >
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-    );
-  };
-
-  const renderLineChart = () => {
-    // Extract all keys except 'year' to use as lines
-    const keys = Object.keys(data[0]).filter((key) => key !== "year");
-
-    return (
-      <ResponsiveContainer width="100%" height={height}>
-        <LineChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 30 }}
-        >
-          <defs>
-            {GRADIENTS.map((gradient, index) => (
-              <linearGradient
-                key={gradient.id}
-                id={gradient.id}
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-                <stop
-                  offset="5%"
-                  stopColor={gradient.colors[0]}
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={gradient.colors[1]}
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-            ))}
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" opacity={0.5} />
-          <XAxis
-            dataKey="year"
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <YAxis
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend wrapperStyle={{ paddingTop: "20px" }} />
-          {keys.map((key, index) => (
-            <Line
-              key={key}
-              type="monotone"
-              dataKey={key}
-              stroke={COLORS[index % COLORS.length]}
-              strokeWidth={3}
-              dot={{ r: 5, strokeWidth: 2, fill: "#fff" }}
-              activeDot={{ r: 7, strokeWidth: 2 }}
-              connectNulls={false}
-            />
-          ))}
-        </LineChart>
-      </ResponsiveContainer>
-    );
-  };
-
-  const renderAreaChart = () => {
-    const keys = Object.keys(data[0]).filter((key) => key !== "year");
-
-    return (
-      <ResponsiveContainer width="100%" height={height}>
-        <AreaChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 30 }}
-        >
-          <defs>
-            {GRADIENTS.map((gradient, index) => (
-              <linearGradient
-                key={gradient.id}
-                id={gradient.id}
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-                <stop
-                  offset="5%"
-                  stopColor={gradient.colors[0]}
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={gradient.colors[1]}
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-            ))}
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" opacity={0.5} />
-          <XAxis
-            dataKey="year"
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <YAxis
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend wrapperStyle={{ paddingTop: "20px" }} />
-          {keys.map((key, index) => (
-            <Area
-              key={key}
-              type="monotone"
-              dataKey={key}
-              stackId="1"
-              stroke={COLORS[index % COLORS.length]}
-              fill={`url(#${GRADIENTS[index % GRADIENTS.length].id})`}
-              strokeWidth={2}
-            />
-          ))}
-        </AreaChart>
-      </ResponsiveContainer>
-    );
-  };
-
-  const renderBarChart = () => {
-    // Check if data has country/name field for bar charts
-    const hasCountryData = data.length > 0 && (data[0].country || data[0].name);
-
-    if (hasCountryData) {
-      return (
-        <ResponsiveContainer width="100%" height={height}>
+  const renderChart = () => {
+    switch (type) {
+      case "bar":
+        return (
           <BarChart
             data={data}
             margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
           >
             <defs>
-              {GRADIENTS.map((gradient, index) => (
+              {GRADIENT_COLORS.map((gradient, index) => (
                 <linearGradient
-                  key={gradient.id}
-                  id={gradient.id}
+                  key={index}
+                  id={`barGradient${index}`}
                   x1="0"
                   y1="0"
                   x2="0"
@@ -291,203 +112,433 @@ export function DataChart({ type, data, title, height = 400 }: DataChartProps) {
                 >
                   <stop
                     offset="5%"
-                    stopColor={gradient.colors[0]}
-                    stopOpacity={0.9}
+                    stopColor={gradient.start}
+                    stopOpacity={0.8}
                   />
                   <stop
                     offset="95%"
-                    stopColor={gradient.colors[1]}
+                    stopColor={gradient.end}
                     stopOpacity={0.6}
                   />
                 </linearGradient>
               ))}
             </defs>
-            <CartesianGrid
-              strokeDasharray="3 3"
-              stroke="#e5e7eb"
-              opacity={0.5}
-            />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
             <XAxis
-              dataKey={data[0].country ? "country" : "name"}
-              tick={{ fill: "#6b7280", fontSize: 11 }}
-              tickLine={{ stroke: "#9ca3af" }}
-              axisLine={{ stroke: "#d1d5db" }}
+              dataKey="country"
               angle={-45}
               textAnchor="end"
               height={80}
+              fontSize={12}
+              stroke="#6b7280"
             />
-            <YAxis
-              tick={{ fill: "#6b7280", fontSize: 12 }}
-              tickLine={{ stroke: "#9ca3af" }}
-              axisLine={{ stroke: "#d1d5db" }}
+            <YAxis stroke="#6b7280" fontSize={12} />
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
             />
-            <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="value" fill="url(#gradient1)" radius={[4, 4, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-      );
-    }
-
-    // Default bar chart for other data formats
-    const keys = Object.keys(data[0]).filter((key) => key !== "year");
-
-    return (
-      <ResponsiveContainer width="100%" height={height}>
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 30 }}
-        >
-          <defs>
-            {GRADIENTS.map((gradient, index) => (
-              <linearGradient
-                key={gradient.id}
-                id={gradient.id}
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-                <stop
-                  offset="5%"
-                  stopColor={gradient.colors[0]}
-                  stopOpacity={0.9}
-                />
-                <stop
-                  offset="95%"
-                  stopColor={gradient.colors[1]}
-                  stopOpacity={0.6}
-                />
-              </linearGradient>
-            ))}
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" opacity={0.5} />
-          <XAxis
-            dataKey="year"
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <YAxis
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            tickLine={{ stroke: "#9ca3af" }}
-            axisLine={{ stroke: "#d1d5db" }}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend wrapperStyle={{ paddingTop: "20px" }} />
-          {keys.map((key, index) => (
             <Bar
-              key={key}
-              dataKey={key}
-              fill={`url(#${GRADIENTS[index % GRADIENTS.length].id})`}
-              radius={[2, 2, 0, 0]}
+              dataKey="value"
+              fill="url(#barGradient0)"
+              radius={[4, 4, 0, 0]}
             />
-          ))}
-        </BarChart>
-      </ResponsiveContainer>
-    );
-  };
+          </BarChart>
+        );
 
-  const renderPieChart = () => {
-    return (
-      <ResponsiveContainer width="100%" height={height}>
-        <PieChart margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-          <Pie
+      case "line":
+        return (
+          <LineChart
             data={data}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={Math.min(height * 0.35, 150)}
-            fill="#8884d8"
-            dataKey="value"
-            nameKey="name"
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
           >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-          <Tooltip
-            content={({ active, payload }) => {
-              if (active && payload && payload.length) {
-                const data = payload[0].payload;
-                return (
-                  <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
-                    <p className="font-semibold text-gray-900">{data.name}</p>
-                    <p className="text-sm text-gray-600">
-                      Value:{" "}
-                      {typeof data.value === "number"
-                        ? data.value.toFixed(2)
-                        : data.value}
-                    </p>
-                    {/* <p className="text-sm text-gray-600">
-                      Percentage: {((data.value / data.total) * 100).toFixed(1)}
-                      %
-                    </p> */}
-                  </div>
-                );
+            <defs>
+              <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#667eea" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#764ba2" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
+            <XAxis
+              dataKey="country"
+              angle={-45}
+              textAnchor="end"
+              height={80}
+              fontSize={12}
+              stroke="#6b7280"
+            />
+            <YAxis stroke="#6b7280" fontSize={12} />
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#667eea"
+              strokeWidth={3}
+              dot={{ fill: "#667eea", strokeWidth: 2, r: 6 }}
+              activeDot={{ r: 8, fill: "#764ba2" }}
+            />
+          </LineChart>
+        );
+
+      case "area":
+        return (
+          <AreaChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+          >
+            <defs>
+              <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#4facfe" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#00f2fe" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
+            <XAxis
+              dataKey="country"
+              angle={-45}
+              textAnchor="end"
+              height={80}
+              fontSize={12}
+              stroke="#6b7280"
+            />
+            <YAxis stroke="#6b7280" fontSize={12} />
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#4facfe"
+              strokeWidth={2}
+              fill="url(#areaGradient)"
+            />
+          </AreaChart>
+        );
+
+      case "pie":
+        return (
+          <PieChart margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={({ name, percent }) =>
+                `${name} ${(percent * 100).toFixed(1)}%`
               }
-              return null;
-            }}
-          />
-          <Legend
-            wrapperStyle={{ paddingTop: "20px" }}
-            formatter={(value, entry) => (
-              <span style={{ color: entry.color, fontWeight: 500 }}>
-                {value}
-              </span>
-            )}
-          />
-        </PieChart>
-      </ResponsiveContainer>
-    );
-  };
+              outerRadius={120}
+              fill="#8884d8"
+              dataKey="value"
+              nameKey="country"
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                  stroke="#fff"
+                  strokeWidth={2}
+                />
+              ))}
+            </Pie>
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+            <Legend verticalAlign="bottom" height={36} iconType="circle" />
+          </PieChart>
+        );
 
-  const renderRadialChart = () => {
-    const radialData = data.slice(0, 8).map((item, index) => ({
-      ...item,
-      fill: COLORS[index % COLORS.length],
-    }));
+      case "donut":
+        return (
+          <PieChart margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={({ name, percent }) =>
+                `${name} ${(percent * 100).toFixed(1)}%`
+              }
+              outerRadius={120}
+              innerRadius={60}
+              fill="#8884d8"
+              dataKey="value"
+              nameKey="country"
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                  stroke="#fff"
+                  strokeWidth={2}
+                />
+              ))}
+            </Pie>
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+            <Legend verticalAlign="bottom" height={36} iconType="circle" />
+          </PieChart>
+        );
 
-    return (
-      <ResponsiveContainer width="100%" height={height}>
-        <RadialBarChart
-          cx="50%"
-          cy="50%"
-          innerRadius="20%"
-          outerRadius="90%"
-          data={radialData}
-        >
-          <RadialBar dataKey="value" cornerRadius={10} fill="#8884d8" />
-          <Legend
-            iconSize={18}
-            wrapperStyle={{ paddingTop: "20px" }}
-            formatter={(value, entry) => (
-              <span style={{ color: entry.color, fontWeight: 500 }}>
-                {value}
-              </span>
-            )}
-          />
-          <Tooltip content={<CustomTooltip />} />
-        </RadialBarChart>
-      </ResponsiveContainer>
-    );
+      case "radial":
+        // Transform data for better radial visualization
+        const maxValue = Math.max(...data.map((d) => d.value));
+        const enhancedRadialData = data.map((item, index) => ({
+          name: item.country,
+          value: item.value,
+          percentage: Math.round((item.value / maxValue) * 100),
+          fill: COLORS[index % COLORS.length],
+          // Create angle based on percentage for better visualization
+          startAngle: index * (360 / data.length),
+          endAngle: (index + 1) * (360 / data.length),
+        }));
+
+        return (
+          <div className="w-full">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+              {/* Radial Chart - Now takes more space */}
+              <div className="xl:col-span-2 flex justify-center items-center">
+                <RadialBarChart
+                  cx="50%"
+                  cy="50%"
+                  innerRadius="25%"
+                  outerRadius="85%"
+                  data={enhancedRadialData}
+                  margin={{ top: 40, right: 40, left: 40, bottom: 40 }}
+                  width={500}
+                  height={500}
+                >
+                  <RadialBar
+                    dataKey="percentage"
+                    cornerRadius={12}
+                    fill="#8884d8"
+                    label={{
+                      position: "insideStart",
+                      fill: "#fff",
+                      fontSize: 14,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {enhancedRadialData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </RadialBar>
+                  <ChartTooltip
+                    content={({ active, payload }) => {
+                      if (active && payload && payload.length) {
+                        const data = payload[0].payload;
+                        return (
+                          <div className="bg-white p-4 border rounded-lg shadow-xl border-gray-200">
+                            <p className="font-bold text-lg text-gray-800">
+                              {data.name}
+                            </p>
+                            <p className="text-sm text-gray-600">
+                              Value:{" "}
+                              <span className="font-semibold">
+                                {data.value}
+                              </span>
+                            </p>
+                            <p className="text-sm text-gray-600">
+                              Percentage:{" "}
+                              <span className="font-semibold">
+                                {data.percentage}%
+                              </span>
+                            </p>
+                          </div>
+                        );
+                      }
+                      return null;
+                    }}
+                  />
+                  <Legend
+                    iconSize={16}
+                    layout="vertical"
+                    verticalAlign="middle"
+                    align="right"
+                    wrapperStyle={{
+                      paddingLeft: "30px",
+                      fontSize: "14px",
+                    }}
+                  />
+                </RadialBarChart>
+              </div>
+
+              {/* Data Summary Cards - Now takes less space but still comprehensive */}
+              <div className="xl:col-span-1 space-y-3">
+                <h4 className="font-bold text-lg text-gray-800 mb-4">
+                  Data Breakdown
+                </h4>
+                <div className="max-h-80 overflow-y-auto space-y-2">
+                  {enhancedRadialData.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border hover:shadow-md transition-shadow"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                          style={{ backgroundColor: item.fill }}
+                        />
+                        <span className="font-medium text-sm">{item.name}</span>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-bold text-lg text-gray-800">
+                          {item.value}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {item.percentage}% of max
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Summary Statistics */}
+                <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border">
+                  <h5 className="font-bold text-sm text-gray-700 mb-3">
+                    Summary Statistics
+                  </h5>
+                  <div className="grid grid-cols-1 gap-3 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Total:</span>
+                      <span className="font-bold text-gray-800">
+                        {data
+                          .reduce((sum, item) => sum + item.value, 0)
+                          .toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Average:</span>
+                      <span className="font-bold text-gray-800">
+                        {Math.round(
+                          data.reduce((sum, item) => sum + item.value, 0) /
+                            data.length
+                        ).toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Maximum:</span>
+                      <span className="font-bold text-gray-800">
+                        {Math.max(...data.map((d) => d.value)).toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Minimum:</span>
+                      <span className="font-bold text-gray-800">
+                        {Math.min(...data.map((d) => d.value)).toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "scatter":
+        return (
+          <ScatterChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
+            <XAxis
+              dataKey="country"
+              angle={-45}
+              textAnchor="end"
+              height={80}
+              fontSize={12}
+              stroke="#6b7280"
+            />
+            <YAxis stroke="#6b7280" fontSize={12} />
+            <ChartTooltip
+              content={<ChartTooltipContent />}
+              contentStyle={{
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "1px solid #e5e7eb",
+                borderRadius: "8px",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+            <Scatter dataKey="value" fill="#667eea">
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Scatter>
+          </ScatterChart>
+        );
+
+      default:
+        return null;
+    }
   };
 
   return (
-    <div ref={chartRef} className="w-full">
-      {title && (
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+    <div className="w-full">
+      <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 via-purple-50 to-indigo-50 rounded-lg border">
+        <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
+        {subtitle && <p className="text-sm text-gray-600">{subtitle}</p>}
+        <div className="flex items-center gap-2 mt-2">
+          <div className="px-2 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border">
+            {type.charAt(0).toUpperCase() + type.slice(1)} Chart
+          </div>
+          {unit && (
+            <div className="px-2 py-1 bg-blue-100 rounded-full text-xs font-medium text-blue-700">
+              Unit: {unit}
+            </div>
+          )}
+          <div className="px-2 py-1 bg-green-100 rounded-full text-xs font-medium text-green-700">
+            {data.length} data points
+          </div>
+          {type === "radial" && (
+            <div className="px-2 py-1 bg-purple-100 rounded-full text-xs font-medium text-purple-700">
+              Comparative Analysis
+            </div>
+          )}
         </div>
-      )}
-      {type === "line" && renderLineChart()}
-      {type === "area" && renderAreaChart()}
-      {type === "bar" && renderBarChart()}
-      {type === "pie" && renderPieChart()}
-      {type === "radial" && renderRadialChart()}
+      </div>
+      <ChartContainer
+        config={chartConfig}
+        className="w-full"
+        style={{ height }}
+      >
+        <ResponsiveContainer width="100%" height="100%">
+          {renderChart()}
+        </ResponsiveContainer>
+      </ChartContainer>
     </div>
   );
 }

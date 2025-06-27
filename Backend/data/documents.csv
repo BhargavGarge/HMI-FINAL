@@ -1,5 +1,15 @@
-id,doc_id,title,domain,year,source
-1,dwr-24-08,08,macroeconomy,2024,DIW Weekly Report 08/2024
-2,dwr-24-29,29,gender,2024,DIW Weekly Report 29/2024
-3,dwr-24-28,28,energy,2024,DIW Weekly Report 28/2024
-4,dwr-24-03,03,gender,2024,DIW Weekly Report 03/2024
+document_id,title,domain,source
+dwr-24-01,"Construction, Housing, and Urban Policy","Construction, Housing, and Urban Policy ",01/2024
+dwr-24-03,Gender & Labor Economics,Gender & Labor Economics,03/2024
+dwr-24-07,"Labor, Social Mobility & Inequality","Labor, Social Mobility & Inequality ",07/2024
+dwr-24-08,Geopolitics & International Trade Policy,Geopolitics & International Trade Policy,08/2024
+dwr-24-09,"Labor, Social Mobility & Inequality","Labor, Social Mobility & Inequality ",09/2024
+dwr-24-10,Economics & Macroeconomic Forecasting,Economics & Macroeconomic Forecasting ,10/2024
+dwr-24-12,Public Health & Migration Policy,Public Health & Migration Policy,12/2024
+dwr-24-24,Economics & Macroeconomic Forecasting,Economics & Macroeconomic Forecasting ,24/2024
+dwr-24-28,Environmental Economics,Environmental Economics,28/2024
+dwr-24-29,"Labor, Social Mobility & Inequality","Labor, Social Mobility & Inequality ",29/2024
+dwr-24-32,Well-being and Subjective Satisfaction,Well-being and Subjective Satisfaction ,32/2024
+dwr-24-35,Economics & Macroeconomic Forecasting,Economics & Macroeconomic Forecasting ,35/2024
+dwr-24-43,Environmental Economics,Environmental Economics,43/2024
+dwr-24-49,"Labor, Social Mobility & Inequality","Labor, Social Mobility & Inequality ",49/2024

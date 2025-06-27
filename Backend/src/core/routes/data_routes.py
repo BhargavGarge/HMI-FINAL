@@ -1,11 +1,12 @@
 from flask import Blueprint, jsonify, request
 from src.core.services.data_service import DataService
+from sqlalchemy import text
 import logging
-
+from src.core.db import db
 logger = logging.getLogger(__name__)
 data_routes = Blueprint('data_routes', __name__)
 
-@data_routes.route("/api/time-series/<int:indicator_id>")
+@data_routes.route("/api/time-series/<string:indicator_id>")
 def get_time_series(indicator_id):
     """Get time series data for visualization"""
     try:
@@ -47,7 +48,7 @@ def get_indicators():
             "details": str(e)
         }), 500
 
-@data_routes.route("/api/related-visualizations/<int:indicator_id>")
+@data_routes.route("/api/related-visualizations/<string:indicator_id>")
 def get_related_visualizations(indicator_id):
     """Get all visual entities related to a specific indicator"""
     try:
@@ -90,3 +91,54 @@ def health_check():
         "message": "API is running",
         "version": "1.0.0"
     })
+
+@data_routes.route("/api/documents")
+def get_documents():
+    """Get all documents"""
+    try:
+        query = """
+        SELECT document_id, title, domain, source 
+        FROM documents
+        ORDER BY title
+        """
+        with db.engine.connect() as connection:
+            result = connection.execute(text(query))
+            documents = [dict(row._mapping) for row in result]
+            return jsonify({
+                "status": "success",
+                "data": documents,
+                "count": len(documents)
+            })
+    except Exception as e:
+        logger.error(f"Error fetching documents: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": "Failed to fetch documents",
+            "details": str(e)
+        }), 500
+
+@data_routes.route("/api/visual-entities")
+def get_visual_entities():
+    """Get all visual entities"""
+    try:
+        query = """
+        SELECT v.visual_id, v.type, v.document_id, d.title as document_title
+        FROM visual_entities v
+        JOIN documents d ON v.document_id = d.document_id
+        ORDER BY v.type
+        """
+        with db.engine.connect() as connection:
+            result = connection.execute(text(query))
+            visuals = [dict(row._mapping) for row in result]
+            return jsonify({
+                "status": "success",
+                "data": visuals,
+                "count": len(visuals)
+            })
+    except Exception as e:
+        logger.error(f"Error fetching visual entities: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": "Failed to fetch visual entities",
+            "details": str(e)
+        }), 500

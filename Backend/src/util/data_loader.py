@@ -1,67 +1,132 @@
+# src/core/utils/load_data.py
 import pandas as pd
-from sqlalchemy import text
+import psycopg2
+import os
+from pathlib import Path
 
-def create_tables(engine):
-    create_schema_sql = """
-    CREATE TABLE IF NOT EXISTS documents (
-        id SERIAL PRIMARY KEY,
-        doc_id TEXT UNIQUE NOT NULL,
-        title TEXT,
-        domain TEXT,
-        year INT,
-        source TEXT
-    );
+def load_csv_data():
+    # Database connection
+    conn = psycopg2.connect(
+        dbname="FINAL_HMI",
+        user="postgres",
+        password="db123",
+        host="localhost",
+        port="5432"
+    )
+    cursor = conn.cursor()
 
-    CREATE TABLE IF NOT EXISTS visual_entities (
-        id SERIAL PRIMARY KEY,
-        document_id INTEGER REFERENCES documents(id),
-        fig_number TEXT,
-        type TEXT,
-        title TEXT,
-        description TEXT,
-        tags TEXT[]
-    );
+    # Drop and recreate tables to ensure consistency
+    cursor.execute("DROP TABLE IF EXISTS observations CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS visual_entities CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS indicators CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS documents CASCADE")
+    conn.commit()
 
-    CREATE TABLE IF NOT EXISTS indicators (
-        id SERIAL PRIMARY KEY,
-        name TEXT UNIQUE NOT NULL,
-        unit TEXT,
-        category TEXT,
-        tags TEXT[]
-    );
-
-    CREATE TABLE IF NOT EXISTS observations (
-        id BIGINT PRIMARY KEY,
-        visual_entity_id INTEGER REFERENCES visual_entities(id),
-        indicator_id INTEGER REFERENCES indicators(id),
-        country TEXT,
-        year INT,
-        value NUMERIC,
-        notes TEXT
-    );
-    """
-    with engine.begin() as conn:
-        for statement in create_schema_sql.strip().split(";"):
-            if statement.strip():
-                conn.execute(text(statement.strip()))
-    print("✅ Tables created or verified.")
-
-def load_all_data(engine):
-    create_tables(engine)  # ✅ Call custom table creator
-
-    csv_files = {
-        "documents": "data/documents.csv",
-        "visual_entities": "data/visual_entities.csv",
-        "indicators": "data/indicators.csv",
-        "observations": "data/observations.csv"
+    # Create table SQLs - updated structure
+    create_queries = {
+        "documents": """
+            CREATE TABLE IF NOT EXISTS documents (
+                document_id TEXT PRIMARY KEY,
+                title TEXT,
+                domain TEXT,
+                source TEXT
+            );
+        """,
+        "indicators": """
+            CREATE TABLE IF NOT EXISTS indicators (
+                indicator_id TEXT PRIMARY KEY,
+                name TEXT,
+                unit TEXT,
+                visual_id TEXT,
+                document_id TEXT
+            );
+        """,
+        "visual_entities": """
+            CREATE TABLE IF NOT EXISTS visual_entities (
+                visual_id TEXT PRIMARY KEY,
+                document_id TEXT,
+                type TEXT,
+                indicator_id TEXT
+            );
+        """,
+        "observations": """
+            CREATE TABLE IF NOT EXISTS observations (
+                observation_id TEXT PRIMARY KEY,
+                indicator_id TEXT,
+                visual_id TEXT,
+                value TEXT,
+                period TEXT,  -- Changed from year INT to period TEXT
+                country TEXT,
+                document_id TEXT,
+                unit TEXT,
+                metric_type TEXT,
+                name TEXT
+            );
+        """
     }
 
-    for table, path in csv_files.items():
-        print(f"📥 Loading {table} from {path}")
-        df = pd.read_csv(path)
+    for name, query in create_queries.items():
+        cursor.execute(query)
+    conn.commit()
 
-        if table == "observations" and 'id' in df.columns:
-            df['id'] = df['id'].astype('int64')
+    # Get the correct path to the data folder
+    current_file_path = Path(__file__).resolve()
+    backend_path = current_file_path.parent.parent.parent
+    csv_path = backend_path / "data"
+    
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Data directory not found at: {csv_path}")
 
-        df.to_sql(table, con=engine, if_exists='append', index=False)
-        print(f"✅ {table} loaded successfully.")
+    csv_files = {
+        "documents": "documents.csv",
+        "indicators": "indicators.csv",
+        "visual_entities": "visual-entities.csv",
+        "observations": "observations.csv"
+    }
+
+    def insert_df(df, table):
+        # Handle column mapping for each table
+        if table == "documents":
+            df = df.rename(columns={
+                'document_id': 'document_id',
+                'title': 'title',
+                'domain': 'domain',
+                'source': 'source'
+            })
+        elif table == "observations":
+            df = df.rename(columns={
+                'year': 'period'  # Map 'year' column to 'period'
+            })
+        
+        columns = ', '.join(df.columns)
+        placeholders = ', '.join(['%s'] * len(df.columns))
+        sql = f"INSERT INTO {table} ({columns}) VALUES ({placeholders}) ON CONFLICT DO NOTHING"
+        
+        data = [tuple(row) for row in df.values]
+        cursor.executemany(sql, data)
+        conn.commit()
+
+    # Load and insert each CSV with error handling
+    for table, filename in csv_files.items():
+        file_path = csv_path / filename
+        try:
+            if not file_path.exists():
+                print(f"⚠️ Warning: {filename} not found at {file_path}")
+                continue
+                
+            df = pd.read_csv(file_path)
+            
+            # Clean data
+            if table == "documents":
+                df['source'] = df['source'].str.replace('DIW Weekly Report ', '')
+            
+            insert_df(df, table)
+            print(f"✅ Loaded {filename} into {table} table")
+            
+        except Exception as e:
+            print(f"❌ Error loading {filename}: {str(e)}")
+            conn.rollback()
+
+    cursor.close()
+    conn.close()
+print("✅ All data loaded successfully!")
