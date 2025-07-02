@@ -41,7 +41,7 @@ export default function Navbar() {
               Explore Data
             </Link>
             <Link
-              href="/story-analyser"
+              href="/test-domain"
               className="transition-colors hover:text-foreground/80"
             >
               Stories Analyser

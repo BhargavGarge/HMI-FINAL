@@ -47,9 +47,8 @@ class DataService:
         """Get unique indicators without duplicates"""
         try:
             query = """
-SELECT DISTINCT indicator_id, name, unit 
-FROM indicators 
-ORDER BY name;  
+SELECT DISTINCT indicator_id, name, unit, document_id FROM indicators ORDER BY name;
+
 """
             with db.engine.connect() as connection:
                 result = connection.execute(text(query))
@@ -91,11 +90,11 @@ ORDER BY name;
                 
                 indicator_info = dict(indicator_row._mapping)
                 
-                # Get observations data
+                # Get observations data - using period instead of year
                 query = """
                 SELECT 
                     o.observation_id, o.indicator_id, o.visual_id, 
-                    o.value, o.year, o.country, o.unit,
+                    o.value, o.period, o.country, o.unit,
                     o.metric_type, o.name as observation_name,
                     i.name as indicator_name, i.unit as indicator_unit,
                     ve.type as visual_type,
@@ -107,7 +106,7 @@ ORDER BY name;
                 WHERE o.indicator_id = :indicator_id
                 AND o.value IS NOT NULL 
                 AND o.value != ''
-                ORDER BY o.year, o.country
+                ORDER BY o.period, o.country
                 """
                 
                 result = connection.execute(text(query), {'indicator_id': indicator_id})
@@ -121,6 +120,8 @@ ORDER BY name;
                         if DataService.is_numeric(original_value):
                             row_dict['value'] = DataService.safe_float_convert(original_value)
                             row_dict['original_value'] = str(original_value)
+                            # Map period to year for compatibility with existing code
+                            row_dict['year'] = row_dict['period']
                             data.append(row_dict)
                         else:
                             skipped_values.append(str(original_value))
@@ -141,15 +142,15 @@ ORDER BY name;
                         'skipped_values': list(set(skipped_values))
                     }
                 
-                # Transform data for visualization
-                years = sorted(list(set([d['year'] for d in data if d['year']])))
+                # Transform data for visualization - now using period mapped to year
+                years = sorted(list(set([d['period'] for d in data if d['period']])))
                 countries = sorted(list(set([d['country'] for d in data if d['country']])))
                 
                 # Line chart data
                 line_data = []
                 for year in years:
                     year_data = {'year': year}
-                    year_observations = [d for d in data if d['year'] == year]
+                    year_observations = [d for d in data if d['period'] == year]
                     
                     for obs in year_observations:
                         if obs['country']:
@@ -274,4 +275,80 @@ ORDER BY name;
                 return [dict(row._mapping) for row in result]
         except Exception as e:
             logger.error(f"Error fetching related visuals: {str(e)}")
+            raise
+    @staticmethod
+    def get_indicators_by_documents(document_ids: List[str]) -> List[Dict]:
+        """Fetch all indicator IDs for a list of document_ids"""
+        try:
+            # List of allowed indicator IDs
+            allowed_indicators = {
+                'ind01040', 
+                'ind10001',
+                'ind10002',
+                'ind10003',
+                'ind10004'
+            }
+            
+            query = """
+            SELECT indicator_id, name, unit, document_id
+            FROM indicators
+            WHERE document_id IN :doc_ids
+            ORDER BY document_id, name
+            """
+            with db.engine.connect() as connection:
+                # Convert single item list to tuple properly
+                params = {'doc_ids': tuple(document_ids) if len(document_ids) > 1 else (document_ids[0],)}
+                result = connection.execute(text(query), params)
+                # Filter results to only include allowed indicators
+                return [
+                    dict(row._mapping) 
+                    for row in result 
+                    if dict(row._mapping)['indicator_id'] in allowed_indicators
+                ]
+        except Exception as e:
+            logger.error(f"Error fetching indicators by documents: {str(e)}")
+            raise
+    @staticmethod
+    def get_timeline_series_by_indicator(indicator_id: str) -> List[Dict]:
+        """Get timeline series data for a specific indicator with year classification"""
+        try:
+            query = """
+            SELECT period as year, value
+            FROM observations
+            WHERE indicator_id = :indicator_id
+            AND value IS NOT NULL
+            ORDER BY period
+            """
+
+            with db.engine.connect() as connection:
+                result = connection.execute(text(query), {'indicator_id': indicator_id})
+                rows = result.fetchall()
+
+                def classify_year(year_str: str) -> str:
+                    try:
+                        year = int(year_str)
+                        if year < 2023:
+                            return "past"
+                        elif year in [2023, 2024]:
+                            return "present"
+                        elif year >= 2025:
+                            return "future"
+                        else:
+                            return "unknown"
+                    except (ValueError, TypeError):
+                        return "unknown"
+
+                timeline_series = [
+                    {
+                        "year": row.year,
+                        "value": float(row.value) if DataService.is_numeric(row.value) else 0.0,
+                        "year_category": classify_year(row.year)
+                    }
+                    for row in rows
+                ]
+
+                return timeline_series
+
+        except Exception as e:
+            logger.error(f"Error fetching timeline series: {str(e)}")
             raise

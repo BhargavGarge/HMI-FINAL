@@ -7,7 +7,7 @@ from pathlib import Path
 def load_csv_data():
     # Database connection
     conn = psycopg2.connect(
-        dbname="FINAL_HMI",
+        dbname="test_hmi",
         user="postgres",
         password="db123",
         host="localhost",
@@ -55,7 +55,7 @@ def load_csv_data():
                 indicator_id TEXT,
                 visual_id TEXT,
                 value TEXT,
-                period TEXT,  -- Changed from year INT to period TEXT
+                period TEXT,
                 country TEXT,
                 document_id TEXT,
                 unit TEXT,
@@ -85,18 +85,20 @@ def load_csv_data():
     }
 
     def insert_df(df, table):
+        # Convert all column names to lowercase to avoid case sensitivity issues
+        df.columns = df.columns.str.lower()
+        
         # Handle column mapping for each table
         if table == "documents":
-            df = df.rename(columns={
-                'document_id': 'document_id',
-                'title': 'title',
-                'domain': 'domain',
-                'source': 'source'
-            })
+            # Ensure all required columns exist
+            required_columns = ['document_id', 'title', 'domain', 'source']
+            for col in required_columns:
+                if col not in df.columns:
+                    raise ValueError(f"Missing required column '{col}' in documents.csv")
+            
         elif table == "observations":
-            df = df.rename(columns={
-                'year': 'period'  # Map 'year' column to 'period'
-            })
+            if 'year' in df.columns and 'period' not in df.columns:
+                df = df.rename(columns={'year': 'period'})
         
         columns = ', '.join(df.columns)
         placeholders = ', '.join(['%s'] * len(df.columns))
@@ -118,7 +120,11 @@ def load_csv_data():
             
             # Clean data
             if table == "documents":
-                df['source'] = df['source'].str.replace('DIW Weekly Report ', '')
+                # Check if source column exists before processing
+                if 'source' in df.columns:
+                    df['source'] = df['source'].astype(str).str.replace('DIW Weekly Report ', '')
+                else:
+                    raise ValueError("'source' column not found in documents.csv")
             
             insert_df(df, table)
             print(f"✅ Loaded {filename} into {table} table")
@@ -129,4 +135,4 @@ def load_csv_data():
 
     cursor.close()
     conn.close()
-print("✅ All data loaded successfully!")
+    print("✅ All data loaded successfully!")

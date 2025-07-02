@@ -78,6 +78,42 @@ function createVisualizationsFromSectionData(
   // Generate visualizations based on section data
   Object.entries(sectionData).forEach(([key, data]: [string, any]) => {
     if (typeof data === "object" && data !== null) {
+      // Special handling for wage_support data
+      if (key === "wage_support") {
+        const chartType = "bar";
+        const chartData = data.country.map(
+          (country: string, index: number) => ({
+            country,
+            "GDP Percentage": data.gdp_percentage[index],
+            year: data.year[index],
+          })
+        );
+
+        const config = {
+          "GDP Percentage": {
+            label: "GDP Percentage",
+            color: "hsl(var(--chart-1))",
+          },
+        };
+
+        const insight = `Wage support programs during COVID ranged from ${Math.min(
+          ...data.gdp_percentage
+        )}% to ${Math.max(
+          ...data.gdp_percentage
+        )}% of GDP across these countries.`;
+
+        visualizations.push({
+          title: "Wage Support During COVID",
+          description: "Comparison of wage support programs across countries",
+          type: chartType,
+          data: chartData,
+          config,
+          insight,
+          trend: "stable",
+        });
+        return;
+      }
+
       // Determine chart type based on data structure and content
       let chartType: "line" | "bar" | "area" | "pie" = "bar";
       let chartData: any[] = [];

@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from src.core.services.data_service import DataService
 from sqlalchemy import text
 import logging
+import random
 from src.core.db import db
 logger = logging.getLogger(__name__)
 data_routes = Blueprint('data_routes', __name__)
@@ -140,5 +141,48 @@ def get_visual_entities():
         return jsonify({
             "status": "error",
             "message": "Failed to fetch visual entities",
+            "details": str(e)
+        }), 500
+@data_routes.route("/api/story-data/<story>", methods=["GET"])
+def get_story_data(story):
+    try:
+        story_documents = {
+            # "labour-after-lockdowns": ["dwr-24-08", "dwr-24-43"],
+            "strategic-reserves": [ "dwr-24-10","dwr-24-01"]
+            # Add other stories here...
+        }
+
+        if story not in story_documents:
+            return jsonify({"status": "error", "message": "Unknown story"}), 404
+
+        doc_ids = story_documents[story]
+        indicators = DataService.get_indicators_by_documents(doc_ids)
+
+        return jsonify({
+            "status": "success",
+            "story": story,
+            "document_ids": doc_ids,
+            "indicators": indicators,
+        })
+
+    except Exception as e:
+        print(f"[ERROR] Failed to fetch story data: {e}")
+        return jsonify({"status": "error", "message": "Failed to fetch story data", "details": str(e)}), 500
+    
+
+@data_routes.route("/api/timeline-series/<indicator_id>", methods=["GET"])
+def get_timeline_series(indicator_id):
+    try:
+        series = DataService.get_timeline_series_by_indicator(indicator_id)
+        return jsonify({
+            "status": "success",
+            "indicator_id": indicator_id,
+            "timeline_series": series
+        })
+    except Exception as e:
+        logger.error(f"Error in timeline series endpoint: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": "Failed to fetch timeline series",
             "details": str(e)
         }), 500

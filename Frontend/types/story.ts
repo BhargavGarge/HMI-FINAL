@@ -1,3 +1,16 @@
+export interface Visualization {
+  section: string;
+  type: string;
+  title: string;
+  data_ref: string;
+  purpose: string;
+}
+
+export interface Reference {
+  code: string;
+  description: string;
+}
+
 export interface StorySection {
   heading: string;
   content: string;
@@ -18,22 +31,24 @@ export interface Story {
   readTime: number;
   difficulty: "Beginner" | "Intermediate" | "Advanced";
   lastUpdated: string;
-  domainId: string; // Added based on usage in page.tsx
-  data?: StoryData; // This might be from the domain now
+  domainId: string;
+  data?: StoryData;
   sections: StorySection[];
+  visualizations?: Visualization[]; // New optional property
+  references?: Reference[]; // New optional property
 }
 
 export interface Domain {
   id: string;
   name: string;
   description: string;
-  icon: string; // Icon name as string
-  color: string; // Tailwind color name e.g. "blue"
-  gradient: string; // Tailwind gradient classes e.g. "from-blue-500 to-cyan-500"
+  icon: string;
+  color: string;
+  gradient: string;
   totalStories: number;
   totalReadTime: number;
   stories: Story[];
-  data?: any; // Centralized data for the domain's visualizations
+  data?: any;
 }
 
 export interface DashboardData {

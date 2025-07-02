@@ -1157,4 +1157,134 @@ export const domains: Domain[] = [
       },
     },
   },
+  {
+    id: "labour-post-covid",
+    name: "Labour ",
+    description:
+      "Structural shifts in European employment post-COVID, including hybrid work, sectoral divergence, and reskilling challenges",
+    icon: "Briefcase",
+    color: "blue",
+    gradient: "from-blue-500 to-cyan-500",
+    totalStories: 1,
+    totalReadTime: 14,
+    stories: [
+      {
+        id: "european-labour-shifts",
+        domainId: "labour-post-covid",
+        title:
+          "Labour After Lockdowns: Structural Shifts in European Employment Post-COVID",
+        subtitle: "How the Pandemic Redefined Europe’s Labour Market Landscape",
+        thesis:
+          "The COVID-19 pandemic accelerated structural shifts in Europe’s labor markets, including hybrid work adoption, sectoral divergence, and a growing skills divide, with long-term implications for inequality and policy.",
+        tags: [
+          "Labour Market",
+          "Pandemic",
+          "Employment",
+          "EU Policy",
+          "Reskilling",
+        ],
+        readTime: 14,
+        difficulty: "Intermediate",
+        lastUpdated: "2024-05-10",
+        data: {
+          section_0: {
+            unemployment_rates: {
+              period: [
+                "Pre-COVID (2019)",
+                "Peak COVID (2020)",
+                "2021",
+                "2022",
+                "2023",
+              ],
+              eu_average: [6.6, 7.2, 7.0, 6.8, 6.5],
+              germany: [3.2, 4.2, 3.9, 3.5, 3.2],
+              france: [8.4, 9.0, 8.7, 8.2, 7.8],
+              unit: "%",
+            },
+            wage_support: {
+              country: ["Germany", "France", "Austria"],
+              gdp_percentage: [3.4, 4.0, 3.8],
+              year: [2020, 2020, 2020],
+              source: "dwr-24-08",
+            },
+            gender_impact: {
+              sector: ["Hospitality", "Retail", "ICT"],
+              female_employment_change: [-12, -9, +3],
+              male_employment_change: [-7, -5, +8],
+              unit: "% (2020–2021)",
+            },
+          },
+          section_1: {
+            sectoral_changes: {
+              declining_sectors: ["Retail", "Hospitality"],
+              decline_percent: [-9, -10],
+              growing_sectors: ["ICT", "Parcel/Logistics"],
+              growth_percent: [11, 18],
+              timeframe: "2021–2023",
+              source: "dwr-24-08, ind04031",
+            },
+
+            hybrid_work: {
+              country: ["Netherlands", "Belgium", "Denmark"],
+              telework_rate: [35, 32, 30],
+              unit: "% (2023)",
+            },
+          },
+          section_2: {
+            future_projections: {
+              job_type: ["Green/Digital", "Traditional Service"],
+              growth_2026: [18, -5],
+              unit: "%",
+              source: "dwr-24-43",
+            },
+            skills_gap: {
+              metric: [
+                "Vocational Training Access",
+                "Reskilling Program Participation",
+              ],
+              rate: [40, 35],
+              unit: "% (EU average)",
+              source: "ind04017",
+            },
+          },
+        },
+        sections: [
+          {
+            heading: "I. The Past: Pandemic Shock and Labour Stabilization",
+            content:
+              "In March 2020, COVID-19 furloughed millions of workers across Europe. Unlike past crises, mass unemployment was mitigated by Kurzarbeit wage subsidies (3.4% of GDP in Germany, 4% in France). Female employment fell sharply (-12% in hospitality) due to service-sector shutdowns, while male-dominated ICT saw milder impacts. Despite stabilization, the crisis exposed fragility in physical-presence sectors.",
+          },
+          {
+            heading: "II. The Present: Labour Recomposition, Not Recovery",
+            content:
+              "By 2022, labor markets bifurcated: retail/hospitality jobs remained 6–10% below pre-COVID levels, while ICT (+11%) and logistics (+18%) surged. Telework stabilized at 30–35% in Nordic/Benelux countries, and urban-to-rural migration reversed pre-pandemic trends. Reskilling programs failed to keep pace with sectoral churn, leaving older workers disproportionately affected.",
+          },
+          {
+            heading: "III. The Future: Polarization or Progress?",
+            content:
+              "Europe faces a triple divide: (1) Skills: Digital jobs will grow 18% by 2026, but vocational access languishes at 40%. (2) Geography: Rural areas gain hybrid workers but lose service jobs. (3) Age: Youth enter digital economies while 50+ workers face obsolescence. Without targeted policy, labor duality will deepen.",
+          },
+          {
+            heading: "Conclusion: The Great Recomposition",
+            content:
+              "The pandemic forced Europe’s labor system into a structural realignment. Recommendations: 1) Reform vocational systems using real-time data (e.g., dwr-24-43). 2) Regionalize responses to urban/rural disparities. 3) Incentivize reskilling for stranded workers. As the data shows, the challenge is no longer unemployment—it’s mismatched pathways.",
+          },
+        ],
+      },
+    ],
+    data: {
+      unemployment_trends: {
+        year: [2019, 2020, 2021, 2022, 2023],
+        eu_average: [6.6, 7.2, 7.0, 6.8, 6.5],
+        germany: [3.2, 4.2, 3.9, 3.5, 3.2],
+        france: [8.4, 9.0, 8.7, 8.2, 7.8],
+        unit: "%",
+      },
+      sectoral_employment_gap: {
+        sector: ["Hospitality", "Retail", "ICT", "Logistics"],
+        change_2020_2023: [-10, -9, +11, +18],
+        unit: "%",
+      },
+    },
+  },
 ];
