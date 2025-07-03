@@ -1,4 +1,3 @@
-// Define the story type for better type safety
 export interface Story {
   id: string;
   title: string;
@@ -8,104 +7,502 @@ export interface Story {
   readTime: string;
   publishDate: string;
   category: string;
+  document_id?: string;
+  visuals?: {
+    id: string;
+    title: string;
+    type: string;
+    description: string;
+    x_axis: string;
+    y_axis: string;
+    source: string;
+  }[];
+  visual_data?: Array<{
+    source_file: string;
+    description: string;
+    chart_type?: string;
+    time_period?: "past" | "present" | "future";
+    data_sample: Array<Record<string, any>>;
+  }>;
   sections: {
     heading: string;
     content: string;
   }[];
 }
 
-// Array of all stories - easy to add more in the future
 export const stories: Story[] = [
   {
-    id: "labour-after-lockdowns",
+    id: "germany-france-energy-puzzle",
     title:
-      "Labour After Lockdowns: Structural Shifts in European Employment Post-COVID",
-    subtitle: "How the Pandemic Redefined Europe's Labour Market Landscape",
-    author: "Research Team",
-    readTime: "8 min read",
-    publishDate: "2024-01-15",
-    category: "Research",
-    intro:
-      "The COVID-19 pandemic didn't just trigger a temporary employment shock — it accelerated deep, structural shifts across Europe's labor markets. As lockdowns lifted, it became clear that hybrid work, digital re-skilling, and sectoral divergence were not fleeting responses but long-term transformations. This story draws on data from EU labor statistics and recovery funds (e.g., dwr-24-08, dwr-24-43) to track what changed, where, and how governments are adapting.",
-    sections: [
-      {
-        heading: "I. The Past: Pandemic Shock and Labour Stabilization",
-        content:
-          "In March 2020, as COVID-19 swept across Europe, millions of workers were furloughed. However, unlike in previous crises, mass unemployment was largely prevented thanks to Kurzarbeit-style wage subsidies, particularly in countries like Germany, Austria, and France. EU average unemployment rose from 6.6% to just 7.2%. dwr-24-08 shows public wage support exceeded 3.4% of GDP in Germany and 4% in France in 2020. Female employment fell more steeply due to service-sector shutdowns (e.g., hospitality, retail). Despite recessionary conditions, these interventions stabilized income, but revealed sectoral fragility.",
-      },
-      {
-        heading: "II. The Present: Labour Recomposition, Not Recovery",
-        content:
-          "As Europe entered a post-pandemic phase by late 2022, labor markets diverged. Retail & hospitality employment remains 6–10% below pre-COVID levels (dwr-24-08). Many over-50 workers opted for early retirement. In contrast, ICT sector employment grew 11% from 2021–2023 (ind04031), and parcel/logistics jobs rose 18%. Telework stabilized at 30–35% in countries like NL, BE, DK. dwr-24-43 shows urban-to-rural migration reversed prior trends. However, reskilling programs have lagged labour force churn.",
-      },
-      {
-        heading: "III. The Future: Polarization or Progress?",
-        content:
-          "Europe's labor market is splitting across skill, geography, and age. dwr-24-43 projects green/digital job postings to grow 18% by 2026. Yet, Indicator ind04017 shows vocational access remains under 40% in many EU countries. If NextGenEU funds aren't better targeted, dualities will deepen — digital elites vs. stranded service workers.",
-      },
-      {
-        heading: "Conclusion",
-        content:
-          "The pandemic revealed fault lines in Europe's labor system. Policymakers must reform vocational systems, localize response strategies, and harness real-time labour data. Europe's labour policy is no longer about jobs lost — it's about pathways to where jobs are going.",
-      },
-    ],
-  },
-  // Example of how to add more stories in the future:
-  {
-    id: "digital-transformation-europe",
-    title: "Digital Transformation in European SMEs: Beyond the Hype",
-    subtitle:
-      "How Small and Medium Enterprises Are Really Adapting to Digital Change",
-    author: "Tech Analysis Team",
-    readTime: "6 min read",
-    publishDate: "2024-01-10",
-    category: "Technology",
-    intro:
-      "While headlines focus on AI and automation in large corporations, Europe's 25 million SMEs are quietly undergoing their own digital revolution. This analysis examines real adoption patterns, challenges, and opportunities across different sectors and regions.",
-    sections: [
-      {
-        heading: "The Reality Check: Where SMEs Actually Stand",
-        content:
-          "Despite policy initiatives like Digital Europe Programme, SME digitalization remains uneven. Manufacturing SMEs lead with 67% having basic digital tools, while traditional services lag at 34%. Geographic disparities are stark: Nordic countries show 80%+ adoption rates while Eastern European SMEs average 45%.",
-      },
-      {
-        heading: "Success Stories and Scaling Challenges",
-        content:
-          "German Mittelstand companies demonstrate how incremental digitalization works. Rather than wholesale transformation, successful SMEs focus on specific pain points: inventory management, customer communication, or supply chain visibility. The key insight: digital tools must solve immediate business problems, not chase technological trends.",
-      },
-    ],
-  },
-  {
-    id: "strategic-reserves",
-    title: "Strategic Reserves — Insurance Against Energy Instability",
-    subtitle:
-      "How Germany's Resilience Doctrine Is Redefining Economic Stability",
+      "The Price Divide – How Germany and France Navigate Europe's Energy Puzzle",
+    subtitle: "Diverging Costs and Policy Paths in a Shared Market",
     author: "Energy Policy Team",
-    readTime: "8 min read",
-    publishDate: "2024-02-15",
+    readTime: "12 min read",
+    publishDate: "2024-01-20",
     category: "Energy",
     intro:
-      "As Germany's energy system reels from the twin shocks of war and climate volatility, a quieter but profound shift has taken place: the elevation of strategic reserves — not just for oil, but across gas, chemicals, and food — to the heart of national economic planning. Once relegated to emergency stockpiles, these reserves are now becoming a key economic stabilizer in an era of global supply fragility.",
+      "Europe's energy shock is no longer just a macroeconomic concern—it's a lived experience shaping household budgets and political alliances. While France leans on nuclear stability, Germany's industrial model is tested by fossil phase-outs and volatile gas prices. This story compares their economic resilience and how policies affect different income groups.",
     sections: [
       {
-        heading: "I. The Past: A Comfortably Connected System",
+        heading: "I. The Past: From Cheap Gas to Price Shocks",
         content:
-          "For much of the 2000s and 2010s, Germany relied on stable, long-term supply contracts — especially for natural gas via Nord Stream — and maintained only minimal physical reserves beyond EU mandates. According to data in dwr-24-10, Germany's gas storage capacity utilization averaged just 68% between 2015 and 2019. Strategic storage of other commodities remained decentralized. Indicator data from dwr-24-28 show that public storage-related investment stayed below 0.2% of GDP annually between 2014 and 2019.",
+          "Before 2021, Germany relied heavily on low-cost Russian gas, enabling both affordable heating and export competitiveness. Meanwhile, France's nuclear base allowed stable electricity prices. As the Ukraine war escalated, energy prices surged—Germany saw heating costs triple for lower-income households (see fig_1_heating_expenditure_data.csv), with 4.5% of income spent on energy by the bottom decile.",
       },
       {
-        heading: "II. The Present: From Market Reliance to Strategic Buffering",
+        heading: "II. The Present: Households Bear Unequal Burdens",
         content:
-          "Following Russia's invasion of Ukraine, the entire premise of European energy security collapsed. Germany filled existing gas facilities to 95%, constructed LNG terminals, and briefly returned to coal. According to dwr-24-49, gas reserves surged from 68% in 2021 to 98% by late 2022. dwr-24-35 shows public language shifting — reserves became 'macro-stabilizers'. The KTF fund reallocated €5 billion to warehousing. Logistics permit issuance rose 9% in 2023, according to indicator ind01040.",
+          "While energy inflation eased by late 2023, the structural gap persisted. Heating costs still make up over 3% of income for Germany's lowest-income renters. Meanwhile, homeowners with better insulation saw less impact (see fig_5_tenants_owners_efficiency_income.csv). Germany's private consumption lags behind EU peers (see Fig_4_2_germany_private_consumption_data.csv), indicating eroded household confidence.",
       },
       {
-        heading: "III. The Future: Strategic Reserves as Infrastructure",
+        heading: "III. The Future: Resilience or Fragmentation?",
         content:
-          "Strategic reserves will likely be treated as infrastructure assets. dwr-24-28 estimates 0.8–1.1% of GDP annually needed through 2030 to expand full-spectrum reserves. Early data show results: fuel price volatility dropped 12% vs. neighbors, permit issuance for cold logistics surged. But challenges remain — should reserves be centralized or decentralized? Climate-aligned or fossil-dependent?",
+          "Forecasts for 2024–2026 suggest recovery in German GDP (see fig_3_germany_gdp_growth_forecast_data.csv), but with consumption and investment divided across income lines. If energy transition subsidies remain flat-rate, the poorest will bear a disproportionate cost of decarbonization—despite contributing least to emissions.",
       },
       {
         heading: "Conclusion",
         content:
-          "Germany's new strategic reserve policy signals a deep rethinking of resilience. To succeed, the next phase must be climate-aligned, transparent, and avoid crowding out private logistics. As dwr-24-10, dwr-24-49, and dwr-24-28 show, strategic reserves are no longer optional — they are infrastructure.",
+          "Energy shocks have split Europe along socio-economic lines. France and Germany exemplify diverging paths: nuclear stability vs. fossil exposure. Without targeted compensation, climate policy may become politically unsustainable.",
+      },
+    ],
+    visual_data: [
+      {
+        source_file: "fig_1_global_gdp_growth_quarterly_data.csv",
+        description:
+          "Tracks GDP growth across advanced economies from 2015 to 2023, illustrating global context of post-COVID economic resilience.",
+        chart_type: "line",
+        time_period: "future",
+        data_sample: [
+          {
+            Quarter: "2023Q1",
+            Emerging_Economies_QoQ: 1.2,
+            Advanced_Economies_QoQ: 0.2,
+            World_Index_2015Q1_100: 133.0,
+          },
+          {
+            Quarter: "2023Q2",
+            Emerging_Economies_QoQ: 0.95,
+            Advanced_Economies_QoQ: 0.15,
+            World_Index_2015Q1_100: 134.5,
+          },
+          {
+            Quarter: "2023Q3",
+            Emerging_Economies_QoQ: 1.15,
+            Advanced_Economies_QoQ: 0.25,
+            World_Index_2015Q1_100: 136.0,
+          },
+          {
+            Quarter: "2023Q4",
+            Emerging_Economies_QoQ: 0.95,
+            Advanced_Economies_QoQ: 0.15,
+            World_Index_2015Q1_100: 137.5,
+          },
+          {
+            Quarter: "2024Q1",
+            Emerging_Economies_QoQ: 1.05,
+            Advanced_Economies_QoQ: 0.1,
+            World_Index_2015Q1_100: 139.0,
+          },
+          {
+            Quarter: "2024Q2",
+            Emerging_Economies_QoQ: 0.7,
+            Advanced_Economies_QoQ: 0.15,
+            World_Index_2015Q1_100: 140.0,
+          },
+          {
+            Quarter: "2024Q3",
+            Emerging_Economies_QoQ: 0.85,
+            Advanced_Economies_QoQ: 0.2,
+            World_Index_2015Q1_100: 141.0,
+          },
+          {
+            Quarter: "2024Q4",
+            Emerging_Economies_QoQ: 0.8,
+            Advanced_Economies_QoQ: 0.1,
+            World_Index_2015Q1_100: 142.0,
+          },
+          {
+            Quarter: "2025Q1",
+            Emerging_Economies_QoQ: 0.9,
+            Advanced_Economies_QoQ: 0.15,
+            World_Index_2015Q1_100: 143.5,
+          },
+          {
+            Quarter: "2025Q2",
+            Emerging_Economies_QoQ: 0.85,
+            Advanced_Economies_QoQ: 0.1,
+            World_Index_2015Q1_100: 145.0,
+          },
+        ],
+      },
+      {
+        source_file: "fig_2_euro_area_real_wages_data.csv",
+        description:
+          "Shows real wages indexed by country, useful for comparing income recovery and purchasing power.",
+        chart_type: "line",
+        time_period: "past",
+        data_sample: [
+          {
+            Period: "2017Q1",
+            Euro_area: 102.5,
+            Germany: 98.5,
+            France: 102.5,
+            Italy: 96.5,
+            Spain: 98.5,
+          },
+          {
+            Period: "2017Q2",
+            Euro_area: 102.7,
+            Germany: 98.5,
+            France: 102.8,
+            Italy: 97.0,
+            Spain: 98.7,
+          },
+          {
+            Period: "2017Q3",
+            Euro_area: 102.8,
+            Germany: 98.5,
+            France: 103.0,
+            Italy: 97.5,
+            Spain: 98.8,
+          },
+          {
+            Period: "2017Q4",
+            Euro_area: 103.0,
+            Germany: 98.7,
+            France: 103.2,
+            Italy: 98.0,
+            Spain: 99.0,
+          },
+          {
+            Period: "2018Q1",
+            Euro_area: 102.5,
+            Germany: 98.0,
+            France: 102.5,
+            Italy: 98.5,
+            Spain: 99.5,
+          },
+          {
+            Period: "2018Q2",
+            Euro_area: 102.3,
+            Germany: 97.5,
+            France: 102.3,
+            Italy: 99.0,
+            Spain: 100.0,
+          },
+          {
+            Period: "2018Q3",
+            Euro_area: 102.2,
+            Germany: 97.5,
+            France: 102.0,
+            Italy: 99.5,
+            Spain: 100.2,
+          },
+          {
+            Period: "2018Q4",
+            Euro_area: 102.0,
+            Germany: 97.8,
+            France: 101.5,
+            Italy: 100.0,
+            Spain: 100.5,
+          },
+          {
+            Period: "2019Q1",
+            Euro_area: 101.5,
+            Germany: 98.5,
+            France: 101.0,
+            Italy: 100.5,
+            Spain: 100.8,
+          },
+          {
+            Period: "2019Q2",
+            Euro_area: 101.0,
+            Germany: 99.0,
+            France: 100.5,
+            Italy: 100.8,
+            Spain: 101.0,
+          },
+        ],
+      },
+      {
+        source_file: "fig_3_germany_gdp_growth_forecast_data.csv",
+        description:
+          "Forecast of German GDP trends, showing economic recovery and future expectations.",
+        chart_type: "line",
+        time_period: "future",
+        data_sample: [
+          {
+            Quarter: "2023Q1",
+            GDP_Level_Billions_EUR: 910.5,
+            Quarterly_Growth_Rate_Percent: -0.1,
+          },
+          {
+            Quarter: "2023Q2",
+            GDP_Level_Billions_EUR: 909.5,
+            Quarterly_Growth_Rate_Percent: -0.1,
+          },
+          {
+            Quarter: "2023Q3",
+            GDP_Level_Billions_EUR: 908.5,
+            Quarterly_Growth_Rate_Percent: -0.1,
+          },
+          {
+            Quarter: "2023Q4",
+            GDP_Level_Billions_EUR: 910.0,
+            Quarterly_Growth_Rate_Percent: 0.2,
+          },
+          {
+            Quarter: "2024Q1",
+            GDP_Level_Billions_EUR: 909.5,
+            Quarterly_Growth_Rate_Percent: -0.1,
+          },
+          {
+            Quarter: "2024Q2",
+            GDP_Level_Billions_EUR: 909.5,
+            Quarterly_Growth_Rate_Percent: 0.0,
+          },
+          {
+            Quarter: "2024Q3",
+            GDP_Level_Billions_EUR: 910.5,
+            Quarterly_Growth_Rate_Percent: 0.1,
+          },
+          {
+            Quarter: "2024Q4",
+            GDP_Level_Billions_EUR: 911.0,
+            Quarterly_Growth_Rate_Percent: 0.1,
+          },
+          {
+            Quarter: "2025Q1",
+            GDP_Level_Billions_EUR: 912.0,
+            Quarterly_Growth_Rate_Percent: 0.1,
+          },
+          {
+            Quarter: "2025Q2",
+            GDP_Level_Billions_EUR: 913.0,
+            Quarterly_Growth_Rate_Percent: 0.1,
+          },
+        ],
+      },
+      {
+        source_file: "Fig_4_1_germany_gdp_output_gap_data.csv",
+        description:
+          "Indicates the economic slack or overheating in Germany's economy after COVID.",
+        chart_type: "bar",
+        time_period: "future",
+        data_sample: [
+          {
+            Year: 2021,
+            GDP_Billions_EUR: 3570,
+            Potential_GDP_Billions_EUR: 3615,
+            Output_Gap_Percent: -1.0,
+          },
+          {
+            Year: 2022,
+            GDP_Billions_EUR: 3625,
+            Potential_GDP_Billions_EUR: 3640,
+            Output_Gap_Percent: -0.4,
+          },
+          {
+            Year: 2023,
+            GDP_Billions_EUR: 3615,
+            Potential_GDP_Billions_EUR: 3665,
+            Output_Gap_Percent: -1.4,
+          },
+          {
+            Year: 2024,
+            GDP_Billions_EUR: 3615,
+            Potential_GDP_Billions_EUR: 3685,
+            Output_Gap_Percent: -1.9,
+          },
+          {
+            Year: 2025,
+            GDP_Billions_EUR: 3650,
+            Potential_GDP_Billions_EUR: 3705,
+            Output_Gap_Percent: -1.5,
+          },
+          {
+            Year: 2026,
+            GDP_Billions_EUR: 3700,
+            Potential_GDP_Billions_EUR: 3720,
+            Output_Gap_Percent: -0.5,
+          },
+        ],
+      },
+      {
+        source_file: "Fig_4_2_germany_private_consumption_data.csv",
+        description:
+          "Illustrates household consumption trends post-COVID, showing domestic demand recovery.",
+        chart_type: "area",
+        time_period: "present",
+        data_sample: [
+          {
+            Quarter: "2021Q1",
+            Consumption_Level_Index: 425,
+            Quarterly_Growth_Rate_Percent: -3.5,
+          },
+          {
+            Quarter: "2021Q2",
+            Consumption_Level_Index: 450,
+            Quarterly_Growth_Rate_Percent: 2.5,
+          },
+          {
+            Quarter: "2021Q3",
+            Consumption_Level_Index: 460,
+            Quarterly_Growth_Rate_Percent: 2.0,
+          },
+          {
+            Quarter: "2021Q4",
+            Consumption_Level_Index: 465,
+            Quarterly_Growth_Rate_Percent: 1.2,
+          },
+          {
+            Quarter: "2022Q1",
+            Consumption_Level_Index: 470,
+            Quarterly_Growth_Rate_Percent: 0.9,
+          },
+          {
+            Quarter: "2022Q2",
+            Consumption_Level_Index: 475,
+            Quarterly_Growth_Rate_Percent: 0.9,
+          },
+          {
+            Quarter: "2022Q3",
+            Consumption_Level_Index: 463,
+            Quarterly_Growth_Rate_Percent: -2.0,
+          },
+          {
+            Quarter: "2022Q4",
+            Consumption_Level_Index: 450,
+            Quarterly_Growth_Rate_Percent: -1.5,
+          },
+          {
+            Quarter: "2023Q1",
+            Consumption_Level_Index: 449,
+            Quarterly_Growth_Rate_Percent: -0.1,
+          },
+          {
+            Quarter: "2023Q2",
+            Consumption_Level_Index: 459,
+            Quarterly_Growth_Rate_Percent: 1.0,
+          },
+        ],
+      },
+      {
+        source_file: "fig_1_heating_expenditure_data.csv",
+        description:
+          "Shows energy cost burdens by income decile, core to the energy vulnerability aspect of the story.",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          {
+            Income_Decile: 1,
+            "50th_Percentile": 11.0,
+            "75th_Percentile": 17.0,
+            "90th_Percentile": 23.0,
+          },
+          {
+            Income_Decile: 2,
+            "50th_Percentile": 8.5,
+            "75th_Percentile": 13.0,
+            "90th_Percentile": 18.0,
+          },
+          {
+            Income_Decile: 3,
+            "50th_Percentile": 7.5,
+            "75th_Percentile": 11.5,
+            "90th_Percentile": 16.0,
+          },
+          {
+            Income_Decile: 4,
+            "50th_Percentile": 6.8,
+            "75th_Percentile": 10.5,
+            "90th_Percentile": 14.5,
+          },
+          {
+            Income_Decile: 5,
+            "50th_Percentile": 6.2,
+            "75th_Percentile": 9.8,
+            "90th_Percentile": 13.0,
+          },
+          {
+            Income_Decile: 6,
+            "50th_Percentile": 5.8,
+            "75th_Percentile": 9.2,
+            "90th_Percentile": 12.0,
+          },
+          {
+            Income_Decile: 7,
+            "50th_Percentile": 5.5,
+            "75th_Percentile": 8.8,
+            "90th_Percentile": 11.2,
+          },
+          {
+            Income_Decile: 8,
+            "50th_Percentile": 5.2,
+            "75th_Percentile": 8.5,
+            "90th_Percentile": 10.8,
+          },
+          {
+            Income_Decile: 9,
+            "50th_Percentile": 4.9,
+            "75th_Percentile": 8.2,
+            "90th_Percentile": 10.5,
+          },
+          {
+            Income_Decile: 10,
+            "50th_Percentile": 4.6,
+            "75th_Percentile": 7.8,
+            "90th_Percentile": 10.0,
+          },
+        ],
+      },
+      {
+        source_file: "fig_5_tenants_owners_efficiency_income.csv",
+        description:
+          "Links building energy efficiency to income groups and tenure, reflecting structural inequalities.",
+        chart_type: "pie",
+        time_period: "present",
+        data_sample: [
+          {
+            name: "Inefficient Owners (Above Wohngeld)",
+            value: 23,
+            category: "owners",
+          },
+          {
+            name: "Inefficient Owners (Below Wohngeld)",
+            value: 8,
+            category: "owners",
+          },
+          {
+            name: "Inefficient Tenants (Above Wohngeld)",
+            value: 12,
+            category: "tenants",
+          },
+          {
+            name: "Inefficient Tenants (Below Wohngeld)",
+            value: 13,
+            category: "tenants",
+          },
+          {
+            name: "Very Inefficient Owners (Above Wohngeld)",
+            value: 25,
+            category: "owners",
+          },
+          {
+            name: "Very Inefficient Owners (Below Wohngeld)",
+            value: 5,
+            category: "owners",
+          },
+          {
+            name: "Very Inefficient Tenants (Above Wohngeld)",
+            value: 3,
+            category: "tenants",
+          },
+          {
+            name: "Very Inefficient Tenants (Below Wohngeld)",
+            value: 16,
+            category: "tenants",
+          },
+        ],
       },
     ],
   },
