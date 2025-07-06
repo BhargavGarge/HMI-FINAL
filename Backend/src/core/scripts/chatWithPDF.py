@@ -12,7 +12,9 @@ PDF_SOURCE_IDS = {
     "subjective wellbeing": "src_y1X9pr5NL2Aer3UI1ydzj",
     "emission trading": "src_ZILm5QI9VzVQUgMRSpE2w",
     "transport": "src_617Hb0pwT8lZQiNi0SaCf",
-    "refugees & migration": "src_WR0PhkuLfSAcRq6mjQO3k"
+    "refugees & migration": "src_WR0PhkuLfSAcRq6mjQO3k",
+    "construction_housing":"src_zWtVpnnG4b8bUnJCTIiNe",
+    "energy_climate":"src_YOKxTVcRFs7DTLm6ydWKR",
 }
 
 def get_source_id(file_path):

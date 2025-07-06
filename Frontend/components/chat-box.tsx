@@ -51,6 +51,8 @@ export function ChatBox({ indicator }: ChatBoxProps) {
     "emission trading": "src_ZILm5QI9VzVQUgMRSpE2w",
     transport: "src_617Hb0pwT8lZQiNi0SaCf",
     "refugees & migration": "src_WR0PhkuLfSAcRq6mjQO3k",
+    construction_housing: "src_zWtVpnnG4b8bUnJCTIiNe",
+    energy_climate: "src_YOKxTVcRFs7DTLm6ydWKR",
   };
 
   // Get the sourceId for the selected indicator, fallback to macroeconomy if unknown

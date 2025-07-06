@@ -59,15 +59,27 @@ export default function Home() {
   const [trendList, setTrendList] = useState<Trend[]>([]);
 
   const prompts: Record<string, string> = {
-    "gender equality": `List the top 3 gender equality indicators from the provided data. Return as a JSON array with \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). Respond only with valid JSON.`,
-    labour: `Identify the top 3 labor market indicators based on the PDF. Return them as a JSON array with keys: \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). Only return the JSON.`,
-    marcoeconomy: `From the macroeconomic data, extract the top 3 macroeconomic indicators for Germany. Provide them in JSON array format with keys: \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). Don't include markdown formatting.`,
-    health: `List the top 3 health indicators for Germany based on the PDF. Present them in a clean JSON array with \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", \"flat\"). Avoid any markdown.`,
-    finance: `Based on the financial data, extract the top 3 finance-related indicators. Format them in JSON with \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). No extra formatting.`,
-    "subjective wellbeing": `Identify the top 3 indicators of subjective wellbeing from the document. Return only a JSON array with \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\").`,
-    "emission trading": `List the 3 most important indicators or statistics related to emission trading. Provide a JSON array containing \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). JSON only.`,
-    transport: `From the transport-related data, extract 3 key transport indicators. Return them as a JSON array with fields: \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). Do not wrap in markdown.`,
-    "refugees & migration": `List the top 3 current indicators related to refugees and migration. Format as a JSON array with \"title\", \"value\", \"description\", and \"trend\" (\"up\", \"down\", or \"flat\"). Only return valid JSON.`,
+    "gender equality": `List the top 3 indicators related to gender equality from the dataset. Respond as a JSON array with keys: "title", "value", "description", and "trend" ("up", "down", or "flat"). Return valid JSON only.`,
+
+    labour: `Identify the top 3 indicators reflecting labor market trends. Respond with a JSON array containing "title", "value", "description", and "trend" ("up", "down", or "flat"). Return valid JSON only.`,
+
+    marcoeconomy: `From the macroeconomic dataset, extract the top 3 key indicators for Germany. Format your response as a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). JSON only.`,
+
+    health: `List the top 3 health indicators for Germany based on the data. Provide them in a clean JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Do not include markdown.`,
+
+    finance: `Identify the top 3 financial indicators for Germany from the dataset. Return a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). No extra formatting.`,
+
+    "subjective wellbeing": `Extract the top 3 indicators of subjective wellbeing. Return only a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Avoid any extra content.`,
+
+    "emission trading": `List 3 major indicators or metrics related to emission trading schemes. Output a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Return only valid JSON.`,
+
+    transport: `From the transport data, extract 3 main transport indicators. Format as a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Only return valid JSON.`,
+
+    "refugees & migration": `Identify the top 3 current indicators related to refugees and migration in Germany. Format your response as a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). JSON only.`,
+
+    energy_climate: `Extract the 3 most significant indicators related to energy consumption, energy policy, or climate impacts. Return a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Respond with JSON only.`,
+
+    construction_housing: `List the top 3 indicators related to construction activity or housing in Germany. Format your response as a JSON array with "title", "value", "description", and "trend" ("up", "down", or "flat"). Return only valid JSON.`,
   };
 
   useEffect(() => {
@@ -263,6 +275,12 @@ export default function Home() {
                   <SelectItem value="transport">Transport</SelectItem>
                   <SelectItem value="refugees & migration">
                     Refugees And Migration
+                  </SelectItem>
+                  <SelectItem value="energy_climate">
+                    Energy & Climate
+                  </SelectItem>
+                  <SelectItem value="construction_housing">
+                    Construction & Housing
                   </SelectItem>
                 </SelectContent>
               </Select>
