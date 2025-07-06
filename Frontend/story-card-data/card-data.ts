@@ -1016,6 +1016,7 @@ export const stories: Story[] = [
     ],
   },
   {
+    id: "educational-inequity-post-pandemic",
     title:
       "Educational Inequity Post-Pandemic: Long-Term Scars in Skill Development",
     category: "Education",
@@ -1609,6 +1610,7 @@ export const stories: Story[] = [
     ],
   },
   {
+    id: "squeeze-middle-class-germany",
     title:
       "The Squeeze on the Middle — Income, Satisfaction, and Climate Burden in Germany",
     category: "Social Policy",
@@ -1817,6 +1819,7 @@ export const stories: Story[] = [
     ],
   },
   {
+    id: "germany-labor-market-transformation",
     title:
       "From Bricks to Bytes — How Construction and Digitalization Reshape Labor Demand",
     category: "Labor Market",
@@ -2058,6 +2061,7 @@ export const stories: Story[] = [
     ],
   },
   {
+    id: "russia-sanctions-welfare-loss",
     title:
       "The Sanctions Ripple — Mapping Welfare Losses from Russian Trade Isolation",
     category: "Trade Policy",
@@ -2618,6 +2622,7 @@ export const stories: Story[] = [
     references: ["dwr-24-10.pdf", "dwr-24-28.pdf", "dwr-24-32.pdf"],
   },
   {
+    id: "germany-flight-shame",
     title: "Flight Shame or Train Pain? The Carbon Cost of Travel Choices",
     author: "Climate Policy and Mobility Behavior Group",
     category: "Climate Policy",
