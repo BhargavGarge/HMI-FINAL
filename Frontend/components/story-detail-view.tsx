@@ -54,6 +54,9 @@ const DIRECT_VISUALIZATION_STORIES = [
   "germany-trust-deficit",
   "germany-subsidy-mirage",
   "germany-misinformation-democracy",
+  "disconnected-in-the-countryside",
+  "story-10-electric-freight",
+  "jobless-but-not-hopeless",
 ];
 
 export function StoryDetailView({

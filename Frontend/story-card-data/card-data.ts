@@ -3026,4 +3026,494 @@ export const stories: Story[] = [
     ],
     references: ["dwr-24-22.pdf", "dwr-24-45.pdf", "dwr-24-49.pdf"],
   },
+  {
+    id: "disconnected-in-the-countryside",
+    title:
+      "Disconnected in the Countryside — How Rural Infrastructure Fails Digital Education",
+    intro:
+      "Germany's push for digital schooling has left many rural students behind. This story visualizes the structural inequality between urban and rural digital access, teacher support, and dropout trends using concrete data.",
+    author: "Education Access & Digital Policy Team",
+    category: "Digital Education & Infrastructure",
+    actors: [
+      "Rural students",
+      "School administrators",
+      "Federal ministries",
+      "Telecom providers",
+    ],
+    references: ["dwr-24-07", "dwr-24-10", "dwr-24-16"],
+    visual_data: [
+      {
+        source_file: "dwr-24-07.pdf",
+        description: "Broadband penetration in schools by region (2022)",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Region: "Urban (Berlin)", Broadband: 98 },
+          { Region: "Rural (Brandenburg)", Broadband: 64 },
+          { Region: "Rural (Thuringia East)", Broadband: 68 },
+          { Region: "Urban (Frankfurt)", Broadband: 96 },
+        ],
+      },
+      {
+        source_file: "dwr-24-16.pdf",
+        description: "Percentage of school-issued devices among teachers",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Region: "Urban", Devices: 76 },
+          { Region: "Rural", Devices: 25 },
+        ],
+      },
+      {
+        source_file: "dwr-24-10.pdf",
+        description: "Disbursement trend of DigitalPakt fund (2019–2023)",
+        chart_type: "line",
+        time_period: "past",
+        data_sample: [
+          { Year: "2019", Disbursed: 10 },
+          { Year: "2020", Disbursed: 23 },
+          { Year: "2021", Disbursed: 36 },
+          { Year: "2022", Disbursed: 45 },
+          { Year: "2023", Disbursed: 54 },
+        ],
+      },
+      {
+        source_file: "dwr-24-07.pdf",
+        description: "Dropout rate by region and urbanity (2022)",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Region: "Urban (Berlin)", Dropouts: 3.9 },
+          { Region: "Urban (Hamburg)", Dropouts: 4.1 },
+          { Region: "Rural (Brandenburg)", Dropouts: 7.4 },
+          { Region: "Rural (Saxony)", Dropouts: 6.8 },
+        ],
+      },
+      {
+        source_file: "dwr-24-07.pdf",
+        description: "Digital literacy test scores comparison (2023)",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Region: "Urban (Berlin)", Score: 82 },
+          { Region: "Urban (Munich)", Score: 80 },
+          { Region: "Rural (Brandenburg)", Score: 61 },
+          { Region: "Rural (Thuringia)", Score: 64 },
+        ],
+      },
+    ],
+    sections: [
+      {
+        title: "Broadband Penetration Gap",
+        content:
+          "While broadband penetration in urban schools reached 98% in 2022, rural areas like Brandenburg lagged behind with only 64%. This gap directly impacts students’ ability to participate in digital learning environments.",
+        charts: [
+          {
+            title: "Broadband Penetration by Region (2022)",
+            type: "bar",
+            data: [
+              { Region: "Urban (Berlin)", Broadband: 98 },
+              { Region: "Rural (Brandenburg)", Broadband: 64 },
+              { Region: "Rural (Thuringia East)", Broadband: 68 },
+              { Region: "Urban (Frankfurt)", Broadband: 96 },
+            ],
+            source_file: "dwr-24-07.pdf",
+          },
+        ],
+      },
+      {
+        title: "Digital Equipment for Teachers",
+        content:
+          "In rural schools, 57% of teachers used their own laptops to teach remotely. Only 25% received school-issued digital equipment, compared to 76% in urban schools, highlighting infrastructure disparity.",
+        charts: [
+          {
+            title: "Teacher Device Access by Region",
+            type: "bar",
+            data: [
+              { Region: "Urban", Devices: 76 },
+              { Region: "Rural", Devices: 25 },
+            ],
+            source_file: "dwr-24-16.pdf",
+          },
+        ],
+      },
+      {
+        title: "DigitalPakt Fund Disbursement",
+        content:
+          "Only 54% of the €6.5 billion federal DigitalPakt fund had been disbursed by 2023. In Brandenburg, less than 40% of schools reported receiving any upgrades, largely due to bureaucratic bottlenecks.",
+        charts: [
+          {
+            title: "DigitalPakt Fund Disbursement Progress",
+            type: "line",
+            data: [
+              { Year: "2019", Disbursed: 10 },
+              { Year: "2020", Disbursed: 23 },
+              { Year: "2021", Disbursed: 36 },
+              { Year: "2022", Disbursed: 45 },
+              { Year: "2023", Disbursed: 54 },
+            ],
+            source_file: "dwr-24-10.pdf",
+          },
+        ],
+      },
+      {
+        title: "Dropout Rate Comparison",
+        content:
+          "Digital exclusion correlates with higher dropout rates. In digitally underserved rural areas, dropout rates reached 7.4% in 2022, compared to 3.9% in urban areas like Hamburg and Berlin.",
+        charts: [
+          {
+            title: "Dropout Rates by Region (2022)",
+            type: "bar",
+            data: [
+              { Region: "Urban (Berlin)", Dropouts: 3.9 },
+              { Region: "Urban (Hamburg)", Dropouts: 4.1 },
+              { Region: "Rural (Brandenburg)", Dropouts: 7.4 },
+              { Region: "Rural (Saxony)", Dropouts: 6.8 },
+            ],
+            source_file: "dwr-24-07.pdf",
+          },
+        ],
+      },
+      {
+        title: "Digital Literacy Scores",
+        content:
+          "Rural students scored significantly lower in national digital literacy tests. In 2023, urban students outperformed rural peers by over 20%.",
+        charts: [
+          {
+            title: "Digital Literacy Test Scores (2023)",
+            type: "bar",
+            data: [
+              { Region: "Urban (Berlin)", Score: 82 },
+              { Region: "Urban (Munich)", Score: 80 },
+              { Region: "Rural (Brandenburg)", Score: 61 },
+              { Region: "Rural (Thuringia)", Score: 64 },
+            ],
+            source_file: "dwr-24-07.pdf",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "jobless-but-not-hopeless",
+    title:
+      "Jobless but Not Hopeless — How Social Enterprises Reinvent Work for the Excluded",
+    intro:
+      "Long-term unemployment in Germany has persisted despite traditional policies. Social enterprises offer a complementary path — focused on dignity, inclusion, and local value creation. This story visualizes their rise, impact, and systemic barriers using real-world data.",
+    author: "Inclusive Labor & Social Policy Unit",
+    category: "Labor Market & Social Economy",
+    actors: [
+      "Long-term unemployed individuals",
+      "Social enterprises",
+      "Municipal governments",
+      "EU cohesion fund managers",
+    ],
+    references: ["dwr-24-19", "dwr-24-28", "dwr-24-32"],
+    visual_data: [
+      {
+        source_file: "dwr-24-19.pdf",
+        description:
+          "Breakdown of long-term unemployed groups in Germany (2023)",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Category: "Total Long-Term Unemployed", Individuals: 880 },
+          { Category: "With Health Limitations", Individuals: 312 },
+          { Category: "Without Qualification", Individuals: 260 },
+          { Category: "Over Age 55", Individuals: 145 },
+        ],
+      },
+      {
+        source_file: "dwr-24-28.pdf",
+        description: "Jobs created by social enterprises in key cities (2023)",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { City: "Leipzig", Jobs: 1200 },
+          { City: "Gelsenkirchen", Jobs: 850 },
+          { City: "Dortmund", Jobs: 940 },
+          { City: "Chemnitz", Jobs: 500 },
+        ],
+      },
+      {
+        source_file: "dwr-24-28.pdf",
+        description: "Funding sources of social enterprises (2023)",
+        chart_type: "pie",
+        time_period: "present",
+        data_sample: [
+          { Source: "EU Cohesion Funds", Share: 44 },
+          { Source: "Municipal Subsidies", Share: 33 },
+          { Source: "Private Donations", Share: 8 },
+          { Source: "Service Revenues", Share: 15 },
+        ],
+      },
+      {
+        source_file: "dwr-24-32.pdf",
+        description: "Barriers faced by social enterprises when scaling up",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Barrier: "Short-term Funding", "Projects Affected (%)": 68 },
+          {
+            Barrier: "Lack of National Framework",
+            "Projects Affected (%)": 57,
+          },
+          { Barrier: "Poor Job Agency Links", "Projects Affected (%)": 44 },
+          { Barrier: "Lack of Skilled Staff", "Projects Affected (%)": 39 },
+        ],
+      },
+      {
+        source_file: "dwr-24-32.pdf",
+        description: "Success metrics for participants in social enterprises",
+        chart_type: "bar",
+        time_period: "present",
+        data_sample: [
+          { Indicator: "Transitioned to Employment", "Success Rate (%)": 61 },
+          { Indicator: "High Job Satisfaction", "Success Rate (%)": 83 },
+          { Indicator: "Improved Social Inclusion", "Success Rate (%)": 76 },
+        ],
+      },
+    ],
+    sections: [
+      {
+        title: "Who Are the Long-Term Unemployed?",
+        content:
+          "Over 880,000 individuals were classified as long-term unemployed in Germany as of 2023. This includes people jobless for over 12 months — many with health issues or lacking formal education.",
+        charts: [
+          {
+            title: "Long-Term Unemployment in Germany (2023)",
+            type: "bar",
+            data: [
+              { Category: "Total Long-Term Unemployed", Individuals: 880 },
+              { Category: "With Health Limitations", Individuals: 312 },
+              { Category: "Without Qualification", Individuals: 260 },
+              { Category: "Over Age 55", Individuals: 145 },
+            ],
+            source_file: "dwr-24-19.pdf",
+          },
+        ],
+      },
+      {
+        title: "Social Enterprises as Inclusive Employers",
+        content:
+          "Social enterprises create 'second-chance' jobs, often in services like recycling, repair, or elder care. In Leipzig alone, over 1,200 individuals found placement via social cooperatives by 2023.",
+        charts: [
+          {
+            title: "Social Enterprise Job Placements (Sample Cities, 2023)",
+            type: "bar",
+            data: [
+              { City: "Leipzig", Jobs: 1200 },
+              { City: "Gelsenkirchen", Jobs: 850 },
+              { City: "Dortmund", Jobs: 940 },
+              { City: "Chemnitz", Jobs: 500 },
+            ],
+            source_file: "dwr-24-28.pdf",
+          },
+        ],
+      },
+      {
+        title: "Funding Sources for Social Projects",
+        content:
+          "Many social ventures rely on EU cohesion funds, municipal budgets, and time-bound pilot project subsidies. Funding stability remains a top risk.",
+        charts: [
+          {
+            title: "Funding Sources of Social Enterprises (2023)",
+            type: "pie",
+            data: [
+              { Source: "EU Cohesion Funds", Share: 44 },
+              { Source: "Municipal Subsidies", Share: 33 },
+              { Source: "Private Donations", Share: 8 },
+              { Source: "Service Revenues", Share: 15 },
+            ],
+            source_file: "dwr-24-28.pdf",
+          },
+        ],
+      },
+      {
+        title: "Why Scaling is Difficult",
+        content:
+          "Only 22% of social enterprises surveyed operate beyond their original city. Experts cite lack of legal framework, short funding cycles, and poor integration with job agencies as key barriers.",
+        charts: [
+          {
+            title: "Barriers to Scaling Social Enterprises",
+            type: "bar",
+            data: [
+              { Barrier: "Short-term Funding", "Projects Affected (%)": 68 },
+              {
+                Barrier: "Lack of National Framework",
+                "Projects Affected (%)": 57,
+              },
+              { Barrier: "Poor Job Agency Links", "Projects Affected (%)": 44 },
+              { Barrier: "Lack of Skilled Staff", "Projects Affected (%)": 39 },
+            ],
+            source_file: "dwr-24-32.pdf",
+          },
+        ],
+      },
+      {
+        title: "Impact: From Welfare to Work",
+        content:
+          "A DIW study found 61% of social enterprise participants moved from long-term welfare to stable employment after 18 months. Job satisfaction rates reached 83%, and social reintegration indicators improved across the board.",
+        charts: [
+          {
+            title: "Outcomes for Social Enterprise Participants",
+            type: "bar",
+            data: [
+              {
+                Indicator: "Transitioned to Employment",
+                "Success Rate (%)": 61,
+              },
+              { Indicator: "High Job Satisfaction", "Success Rate (%)": 83 },
+              {
+                Indicator: "Improved Social Inclusion",
+                "Success Rate (%)": 76,
+              },
+            ],
+            source_file: "dwr-24-32.pdf",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "story-10-electric-freight",
+    title:
+      "The Electric Freight Gambit — Germany’s Trucking Sector at a Crossroads",
+    subtitle:
+      "How Germany’s Freight Transport Sector Is Struggling to Decarbonize Under Pressure",
+    intro:
+      "Freight transport accounts for 28% of Germany’s transport emissions. As diesel costs surge under rising carbon prices and battery-electric truck sales accelerate, the country faces a race against time to decarbonize long-haul trucking. But infrastructure gaps and policy uncertainty threaten to derail the transition.",
+    actors: [
+      "Logistics companies",
+      "Truck manufacturers",
+      "German policymakers",
+    ],
+    publishDate: "2025-07-06",
+
+    references: ["dwr-24-47", "dwr-24-13", "dwr-24-29"],
+    sections: [
+      {
+        heading: "Hydrogen Falls Flat: Market Share Below 0.01%",
+        content:
+          "Hydrogen-powered trucks remain marginal. Just 0.008% of trucks registered in 2024 used hydrogen. Battery-electric vehicles (BEVs) rose to 2.3% of truck registrations. Hydrogen models are only 5 in number compared to 119 BEVs. Barriers include high costs, poor infrastructure, and low daily utilization rates.",
+        charts: [
+          {
+            title: "Truck Technology Share (2022–2024)",
+            type: "bar_chart",
+            data: [
+              { Year: "2022", Hydrogen: 0.003, BEV: 1.4 },
+              { Year: "2023", Hydrogen: 0.006, BEV: 1.8 },
+              { Year: "2024", Hydrogen: 0.008, BEV: 2.3 },
+            ],
+            source_file: "dwr-24-47.pdf",
+          },
+        ],
+      },
+      {
+        heading: "Battery Trucks Surge, but Only 150 Chargers Exist",
+        content:
+          "Germany had fewer than 150 fast truck chargers by 2023, with just 24% on long-distance freight routes. Only 5% of logistics firms had compatible depot infrastructure. 71% of firms cite lack of infrastructure as the top barrier to BEV truck adoption.",
+        charts: [
+          {
+            title: "Infrastructure Availability for BEV Trucks (2023)",
+            type: "bar_chart",
+            data: [
+              { Metric: "Total Fast Chargers", Value: 150 },
+              { Metric: "Corridor Chargers (%)", Value: 24 },
+              { Metric: "Depot BEV Infrastructure (%)", Value: 5 },
+              { Metric: "Firms Citing Infra as Barrier (%)", Value: 71 },
+            ],
+            source_file: "dwr-24-47.pdf",
+          },
+        ],
+      },
+      {
+        heading: "Diesel Gets Expensive: €0.20/L Added via Carbon Pricing",
+        content:
+          "Carbon pricing rose from €25/t CO₂ in 2021 to €45/t in 2024, adding up to €0.20/L to diesel prices. Truck operators pay €4,500–€6,000 more per vehicle per year. BEV subsidies are complex and slow to disburse, leaving 62% of SMEs unable to access them.",
+        charts: [
+          {
+            title: "Carbon Price Impact on Diesel (2021–2024)",
+            type: "line_chart",
+            data: [
+              { Year: "2021", Price: 0.075 },
+              { Year: "2022", Price: 0.12 },
+              { Year: "2023", Price: 0.16 },
+              { Year: "2024", Price: 0.2 },
+            ],
+            source_file: "dwr-24-13.pdf",
+          },
+        ],
+      },
+      {
+        heading: "Emissions: 6% of Germany’s Total, 2/3 from 26t+ Trucks",
+        content:
+          "Trucks emit 28% of transport emissions and 6% of Germany's total. Two-thirds come from trucks over 26t. Diesel emits 2.6 kg CO₂/L. Germany had 680,000 trucks in 2023, but fewer than 10,000 used alternative drives.",
+        charts: [
+          {
+            title: "Emissions from Trucking Sector",
+            type: "bar_chart",
+            data: [
+              { Metric: "Transport Emissions Share (%)", Value: 28 },
+              { Metric: "National Emissions Share (%)", Value: 6 },
+              { Metric: "26t+ Truck Emission Share (%)", Value: 66 },
+              { Metric: "Total Heavy Trucks", Value: 680000 },
+              { Metric: "Alternative Trucks", Value: 10000 },
+            ],
+            source_file: "dwr-24-47.pdf",
+          },
+        ],
+      },
+    ],
+    visual_data: [
+      {
+        source_file: "dwr-24-47.pdf",
+        description: "Hydrogen Falls Flat: Market Share Below 0.01%",
+        chart_type: "bar_chart",
+        time_period: "present",
+        data_sample: [
+          { Year: "2022", Hydrogen: 0.003, BEV: 1.4 },
+          { Year: "2023", Hydrogen: 0.006, BEV: 1.8 },
+          { Year: "2024", Hydrogen: 0.008, BEV: 2.3 },
+        ],
+      },
+      {
+        source_file: "dwr-24-47.pdf",
+        description: "Battery Trucks Surge, but Only 150 Chargers Exist",
+        chart_type: "bar_chart",
+        time_period: "present",
+        data_sample: [
+          { Metric: "Total Fast Chargers", Value: 150 },
+          { Metric: "Corridor Chargers (%)", Value: 24 },
+          { Metric: "Depot BEV Infrastructure (%)", Value: 5 },
+          { Metric: "Firms Citing Infra as Barrier (%)", Value: 71 },
+        ],
+      },
+      {
+        source_file: "dwr-24-13.pdf",
+        description: "Diesel Gets Expensive: €0.20/L Added via Carbon Pricing",
+        chart_type: "line_chart",
+        time_period: "present",
+        data_sample: [
+          { Year: "2021", Price: 0.075 },
+          { Year: "2022", Price: 0.12 },
+          { Year: "2023", Price: 0.16 },
+          { Year: "2024", Price: 0.2 },
+        ],
+      },
+      {
+        source_file: "dwr-24-47.pdf",
+        description: "Emissions: 6% of Germany’s Total, 2/3 from 26t+ Trucks",
+        chart_type: "bar_chart",
+        time_period: "present",
+        data_sample: [
+          { Metric: "Transport Emissions Share (%)", Value: 28 },
+          { Metric: "National Emissions Share (%)", Value: 6 },
+          { Metric: "26t+ Truck Emission Share (%)", Value: 66 },
+          { Metric: "Total Heavy Trucks", Value: 680000 },
+          { Metric: "Alternative Trucks", Value: 10000 },
+        ],
+      },
+    ],
+  },
 ];
